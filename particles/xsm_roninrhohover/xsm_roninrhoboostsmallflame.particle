@@ -1,0 +1,21 @@
+{
+  "kind" : "xsm_roninrhoboostsmallflame",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/xsm_blueflame/xsm_smallblueflame.animation",
+    "position" : [0, 0],
+	"initialVelocity" : [-5, -35],
+    "finalVelocity" : [-1, -25],
+    "approach" : [0, 50],
+    "destructionAction" : "shrink",
+    "destructionTime" : 0.10,
+    "fade" : 1,
+    "size" : 0.85,
+    "layer" : "back",
+    "timeToLive" : 0.10,
+    "variance" : {
+      "initialVelocity" : [2, 10],
+	  "size" : 0.5
+    }
+  }
+}

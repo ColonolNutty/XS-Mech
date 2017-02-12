@@ -1,0 +1,15 @@
+1.14 changes summary for ZZ
+
+health bar (active when pilot in vehicle)
+- search for healthBar in .animation (and healthBarBack), copy 3 sections 
+- in luas, move mechDamageEffects to end (so self.mechFlipped set correctly - 1 frame lag on bar if not moved)
+
+energy use (gah huge)
+- in .vehicle files, add "xsm_energyuse" to list of seat status effects
+- also need to add/tweak energy use rates here (takes a while of testing)
+
+-- in luas, many changes
+
+
+- sigmas hoverjets changed to use energy
+- sigmas running also changed

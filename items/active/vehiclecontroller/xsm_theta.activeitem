@@ -1,0 +1,34 @@
+{
+  "itemName" : "xsm_thetamechcontroller",
+  "level" : 1,
+  "price" : 31200,
+  "rarity" : "legendary",
+  "shortdescription" : "XS T-17 Theta Mech",
+  "description" : "Warning: Highly destructive.",
+  "twoHanded" : false,
+  "maxStack" : 1,
+  "itemTags" : ["vehiclecontroller"],
+
+  "animation" : "vehiclecontroller.animation",
+  "scripts" : ["xsm_vehiclecontroller.lua"],
+  "animationScripts" : ["vehiclecursor.lua"],
+  "filled" : true,
+  "category" : "vehicleController",
+  "tooltipKind" : "vehicle",
+  "largeImage" : "xsm_thetathumb.png",
+
+  "respawnTime" : 1.0,
+
+  //=============Item specifc bits.
+  "vehicleType" : "xsm_thetamech",
+  "vehicleBoundingBox" : [-5, -8, 5, 5],
+  "vehicleImage" : "/vehicles/mech/xsm_thetamech/xsm_thetamechwarp3.png:warp",
+
+  "animationParts" : {
+    "casing" : "xsm_thetamech.png"
+  },
+
+  "inventoryIcon" : "xsm_thetamech.png:full",
+  "emptyInventoryIcon" : "/items/active/vehiclecontroller/xsm_thetamech.png:empty",
+  "filledInventoryIcon" : "/items/active/vehiclecontroller/xsm_thetamech.png:full"
+}

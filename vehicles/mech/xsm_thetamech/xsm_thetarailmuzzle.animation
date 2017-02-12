@@ -1,0 +1,7 @@
+{
+  "frames" : "thetarailmuzzle.png",
+  "variants" : 3,
+  "frameNumber" : 3,
+  "animationCycle" : 0.04,
+  "offset" : [0, 0]
+}

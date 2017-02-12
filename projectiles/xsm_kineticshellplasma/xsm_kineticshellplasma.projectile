@@ -1,0 +1,22 @@
+{
+  "projectileName" : "xsm_kineticshellplasma",
+  "image" : "xsm_kineticshellplasma.png",
+  "frames" : "xsm_kineticshellplasma.png",
+  "animationCycle" : 0.5,
+  "level" : 3,
+  "physics" : "laser",
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "supportsProcessing" : true,
+  "pointLight" : false,
+  "speed" : 180,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/xsm_bulletexplosion.config"
+    }
+  ],
+  "power" : 5.0,
+  "lightColor" : [0, 0, 160],
+  "damageKind" : "plasma"
+}

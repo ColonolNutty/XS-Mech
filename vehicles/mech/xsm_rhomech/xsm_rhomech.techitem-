@@ -1,0 +1,10 @@
+{
+  "itemName" : "xsm_rhomech",
+  "rarity" : "Legendary",
+  "inventoryIcon" : "/tech/xsm_rhomech.png",
+  "description" : "Press F while on the ground. For when enemies need slicing.",
+  "shortdescription" : "XS R-03 Rho Mech",
+  "inspectionKind" : "tech",
+
+  "techModule" : "xsm_rhomech"
+}

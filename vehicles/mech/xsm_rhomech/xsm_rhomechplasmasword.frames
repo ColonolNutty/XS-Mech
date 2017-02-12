@@ -1,0 +1,14 @@
+{
+  "frameGrid" : {
+    "size" : [200, 200],
+    "dimensions" : [12, 2],
+
+    "names" : [
+      [ null, "slashUp.1", "slashUp.2", "slashUp.3", "slashUp.4", "slashUp.5", "slashUp.6", "slashUp.7", "slashUp.8", "resetSlash.1", "resetSlash.2", "resetSlash.3" ],
+      [ null, "slashDown.1", "slashDown.2", "slashDown.3", "slashDown.4", "slashDown.5", "slashDown.6", "slashDown.7", "slashDown.8", "resetSlashDown.1", "resetSlashDown.2", "resetSlashDown.3" ]
+    ]
+  },
+
+  "aliases" : {
+  }
+}

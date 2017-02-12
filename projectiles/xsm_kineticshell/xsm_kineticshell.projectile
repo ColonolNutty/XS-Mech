@@ -1,0 +1,19 @@
+{
+  "projectileName" : "xsm_kineticshell",
+  "image" : "xsm_kineticshell.png",
+  "frames" : "xsm_kineticshell.png",
+  "animationCycle" : 0.25,
+  "level" : 3,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "speed" : 180,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/xsm_bulletexplosion.config"
+    }
+  ],
+  "power" : 5.0,
+  "damageKind" : "default"
+}

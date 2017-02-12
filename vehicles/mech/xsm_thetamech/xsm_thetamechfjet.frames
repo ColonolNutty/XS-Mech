@@ -1,0 +1,27 @@
+{
+  "frameGrid" : {
+    "size" : [128, 128],
+    "dimensions" : [15, 2],
+
+    "names" : [
+      [ null, "idle", null, "charge.1", "charge.2", "charge.3", "charge.4" ],
+      [ null, "fire1.1", "fire1.2", "fire1.3", "fire2.1", "fire2.2", "fire2.3", "fire3.1", "fire3.2", "fire3.3", "fire4.1", "fire4.2", "fire4.3" ]
+    ]
+  },
+
+  "aliases" : {
+    "bcharge4.4" : "charge.1",
+    "bcharge4.3" : "charge.2",
+    "bcharge4.2" : "charge.3",
+    "bcharge4.1" : "charge.4",
+
+    "bcharge3.3" : "charge.1",
+    "bcharge3.2" : "charge.2",
+    "bcharge3.1" : "charge.3",
+	
+    "bcharge2.2" : "charge.1",
+    "bcharge2.1" : "charge.2",
+	
+	"bcharge1.1" : "charge.1"
+  }
+}

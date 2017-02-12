@@ -1,0 +1,34 @@
+{
+  "itemName" : "xsm_rhomechcontroller",
+  "level" : 1,
+  "price" : 18600,
+  "rarity" : "legendary",
+  "shortdescription" : "XS R-03 Rho Mech",
+  "description" : "For when enemies need slicing.",
+  "twoHanded" : false,
+  "maxStack" : 1,
+  "itemTags" : ["vehiclecontroller"],
+
+  "animation" : "vehiclecontroller.animation",
+  "scripts" : ["xsm_vehiclecontroller.lua"],
+  "animationScripts" : ["vehiclecursor.lua"],
+  "filled" : true,
+  "category" : "vehicleController",
+  "tooltipKind" : "vehicle",
+  "largeImage" : "xsm_rhothumb.png",
+
+  "respawnTime" : 1.0,
+
+  //=============Item specifc bits.
+  "vehicleType" : "xsm_rhomech",
+  "vehicleBoundingBox" : [-3, -6.25, 3, 4],
+  "vehicleImage" : "/vehicles/mech/xsm_rhomech/xsm_rhomechwarp3.png:warp",
+
+  "animationParts" : {
+    "casing" : "xsm_rhomech.png"
+  },
+
+  "inventoryIcon" : "xsm_rhomech.png:full",
+  "emptyInventoryIcon" : "/items/active/vehiclecontroller/xsm_rhomech.png:empty",
+  "filledInventoryIcon" : "/items/active/vehiclecontroller/xsm_rhomech.png:full"
+}

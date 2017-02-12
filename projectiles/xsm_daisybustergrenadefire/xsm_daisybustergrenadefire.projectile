@@ -1,0 +1,43 @@
+{
+  "projectileName" : "xsm_daisybustergrenadefire",
+  "physics" : "grenade",
+  "bounces" : -1,
+//  "level" : 15,
+  "timeToLive" : 0.7,
+  "image" : "xsm_daisybustergrenadefire.png",
+  "frames" : "xsm_daisybustergrenadefire.png",
+  "damageKindImage" : "icon.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 4,
+  "speed" : 25,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion/regularexplosion.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "xsm_daisybusterclusterfire",
+      "fuzzAngle" : 10,
+      "inheritDamageFactor" : 0.8,
+      "angleAdjust" : 35
+    },
+    {
+      "action" : "projectile",
+      "type" : "xsm_daisybusterclusterfire",
+      "fuzzAngle" : 10,
+      "inheritDamageFactor" : 0.8,
+      "angleAdjust" : -35
+    },
+    {
+      "action" : "projectile",
+      "type" : "xsm_daisybusterclusterfire",
+      "fuzzAngle" : 10,
+      "inheritDamageFactor" : 0.8,
+      "angleAdjust" : 1
+    }
+  ],
+  "power" : 10,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

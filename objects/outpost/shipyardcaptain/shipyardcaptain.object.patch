@@ -1,0 +1,8 @@
+[
+ {"op":"add","path":"/interactData/items/-","value": {"item":"xsm_sigmamechcontroller"}},
+ {"op":"add","path":"/interactData/items/-","value": {"item":"xsm_elitesigmamechcontroller"}},
+ {"op":"add","path":"/interactData/items/-","value": {"item":"xsm_thetamechcontroller"}},
+ {"op":"add","path":"/interactData/items/-","value": {"item":"xsm_roninrhomechcontroller"}},
+ {"op":"add","path":"/interactData/items/-","value": {"item":"xsm_piraterhomechcontroller"}},
+ {"op":"add","path":"/interactData/items/-","value": {"item":"xsm_rhomechcontroller"}}
+]

@@ -1,0 +1,15 @@
+{
+  "projectileName" : "xsm_crosshairblue",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_crosshairblue.png",
+  "frames" : "xsm_crosshairblue.png",
+  "frameNumber" : 1,
+  "timeToLive" : 0.03,
+  "power" : 0,
+  "speed" : 0.01,
+  "piercing" : true,
+  "supportsProcessing" : true,
+  "damageKind" : "default"
+}

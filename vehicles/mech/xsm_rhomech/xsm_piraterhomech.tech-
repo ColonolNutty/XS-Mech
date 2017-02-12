@@ -1,0 +1,163 @@
+{
+  "name" : "xsm_piraterhomech",
+  "type" : "head",
+  "scripts" : [ 
+   "/tech/mech/xsm_mechAPI.lua",
+   "/tech/mech/xsm_rhomech.lua" 
+   ],
+  "actions" : [ "mechActivate", "mechDeactivate" ],
+  "animator" : "xsm_piraterhomech.animation",
+
+  "mechCustomMovementParameters" : {
+    "standingPoly" : [ [-2.5, -4.25], [-2.0, -6.25], [2.0, -6.25], [2.5, -4.25], [2.5, 3.0], [1.0, 4.0], [-1.0, 4.0], [-2.5, 3.0] ],
+    "crouchingPoly" : [ [-2.5, -4.25], [-2.0, -6.25], [2.0, -6.25], [2.5, -4.25], [2.5, 3.0], [1.0, 4.0], [-1.0, 4.0], [-2.5, 3.0] ],
+
+    "mass" : 10.0,
+
+    "normalGroundFriction" : 150.0,
+    "ambulatingGroundFriction" : 15.0,
+    "skiddingGroundFriction" : 25.0,
+
+    "groundForce" : 1000.0,
+    "airForce" : 200.0,
+    "liquidForce" : 70.0,
+
+    "walkSpeed" : 16.0,
+    "runSpeed" : 12.0,
+
+    "airJumpProfile" : {
+      "jumpSpeed" : 0.0,
+      "jumpControlForce" : 0.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.15
+    },
+
+    "liquidJumpProfile" : {
+      "jumpSpeed" : 15.0,
+      "jumpControlForce" : 3400.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.1
+    }
+  },
+  
+  // More physics properties
+  "mechBackwardSpeed" : 8.0,
+  "mechSkiddingFriction" : 8.0,
+  "mechBoostAirForce" : 600,
+  "mechWalkSlowSpeed" : 6.0,
+  "mechLandingProjectile" : "xsm_landingimpact",
+  "mechLandingLocation" : [0.0, -6.5],
+  
+  // Startup/shutdown
+  "mechStartupTime" : 0.5,
+  "mechShutdownTime" : 1.0,
+  
+  // Jump, Dash, Backhop, Boost, etc. parameters
+  "jumpDuration" : 0.2,
+  "jumpSpeed" : 40,
+  "jumpControlForce" : 5000,
+  "maximumDoubleTapTime" : 0.2,
+  "dashDuration" : 0.3,
+  "dashSpeed" : 32,
+  "dashControlForce" : 3000,
+  "dashAngle" : 13, 
+  "backHopDuration" : 0.10,
+  "backHopSpeed" : 40,
+  "backHopControlForce" : 6000,
+  "backHopAngle" : 5,
+  "backHopCooldown" : 0.75,
+  "boostSpeed" : 22,
+  "boostControlForce" : 3400,
+  
+  // Energy parameters
+  "energyCostPerSecond" : 10,
+  "energyCostPerSecondRunning" : 10,
+  "energyCostPerSlash" : 40,
+  "energyCostPerSecondPull" : 120,
+  "energyCostPerDash" : 70,
+  "energyCostPerBackHop" : 20,
+  "energyCostPerSecondBoost" : 100,
+  "energyCostPerBoost" : 35,
+  "energyCostPerBullet" : 6.5,
+
+  "mechTransformPositionChange" : [0.0, 4.0],
+  "parentOffset" : [1.24, 1.5],
+
+  "mechCollisionTest" : [-3.0, -2.0, 3.0, 7.5],
+  
+  // Standard Equipment
+  // 
+  // POSSIBLE EQUIPS
+  // -----------------------------
+  // EXAMPLE
+  // "equipment" : [ "frontAnimation", "backAnimation" ]
+  // -----------------------------
+  // "sword" : [ "frontArmSwordMovement", "backArmSwordMovement" ]
+  // "gravGun" : [ "frontArmMovement", "backArmMovement" ]
+  // "machineGun" : [ "frontArmGunMovement", "backArmGunMovement" ]
+  // "laserGun" : [ not finished yet... ]
+  // -----------------------------
+  // DO NOT DOUBLE UP
+  "mechLeftEquip" : "machineGun",
+  "mechLeftAnimation" : [ "frontArmGunMovement", "backArmGunMovement" ],  // Always front, then back
+  "mechRightEquip" : "gravGun",
+  "mechRightAnimation" : [ "frontArmMovement", "backArmMovement" ],
+  
+  // Mech Weapon 3 (Machine Gun)
+  "mechAimLimit" : 60,
+  "mechFireCycle" : 0.02,
+  "mechProjectile" : "xsm_heshell",
+  "mechProjectileConfig" : {
+    "power" : 400
+  },
+  "mechGunFireCone" : 4.5,
+  "mechGunRotationRadius" : 2.25,
+  "mechCasingProjectile" : "xsm_heshellcasing",
+  "mechGunChargeUpTime" : 0.5,
+  "mechGunCooldownTime" : 0.5,  
+  "mechGunRecoilSpeed" : 50,
+  "mechGunRecoilPower" : 600,
+  "mechGunRecoilKick" : 0.75,
+  
+  // Mech Weapon 1 (Pyro Cutlass)
+  //"mechSwordSide" : "right",
+  "mechWeapon1Projectile" : "xsm_pyrocutlassswooshup",
+  "mechWeapon1ProjectileF" : "xsm_pyrocutlassswooshupF",
+  "mechWeapon1Projectile2" : "xsm_pyrocutlassswooshdown",
+  "mechWeapon1Projectile2F" : "xsm_pyrocutlassswooshdownF",
+  "mechWeapon1Projectile3" : "xsm_plasmaswordswooshblockdamage",
+  "mechWeapon1Projectile4" : "xsm_pyrocutlassswooshlight",
+  "mechWeapon1MinPower" : 300,  // At low energy
+  "mechWeapon1MaxPower" : 4400,  // At max energy
+  "mechWeapon1MaxEnergy" : 500,  // Where weapon power peaks
+  "mechWeapon1DownSlashPowerMultiplier" : 1.25,  // How much more damage the slashDown does than slashUp
+  "mechWeapon1WindupTime" : 0.05,
+  "mechWeapon1SwingTime" : 0.3,
+  "mechWeapon1ProjectileSpawnDelay" : 0.1,
+  "mechWeapon1Projectile2SpawnDelay" : 0.075,
+  "mechWeapon1WinddownTime" : 0.01,
+  "mechWeapon1WindupTime2" : 0.0,
+  "mechWeapon1SwingTime2" : 0.3,
+  "mechWeapon1WinddownTime2" : 0.01,
+  "mechWeapon1ResetTime" : 0.18,
+  "mechWeapon1GracePeriod" : 0.0,
+  "mechWeapon1CooldownTime" : 0.0,  
+  
+  // Mech Weapon 2 (Yarr Graviton Hook)
+  "mechWeapon2Mode" : "control", // Possible options "pull" (default), "control"
+  "mechWeapon2WarmupTime" : 0.5,
+  "mechWeapon2MaxRange" : 25,
+  "mechWeapon2PullCoefficient" : 7.0,
+  "mechWeapon2BeamCrosshair" : "xsm_crosshairorange",
+  "mechWeapon2BeamProjectile" : "xsm_hookbeam",
+  "mechWeapon2BeamIndicatorProjectile" : "xsm_hookindicator",
+  "mechWeapon2BeamStep" : 1.1875,
+  "mechWeapon2BeamUpdateTime" : 0.03,
+  "mechWeapon2BeamEndProjectile" : "xsm_hookbeamend",
+  "mechWeapon2BeamStartProjectile" : "xsm_hookorb",
+  "mechWeapon2BeamStartRadius" : 0.8,
+  "mechWeapon2BeamIndicatorStartProjectile" : "xsm_hookorbsmall"
+  
+  
+  
+}

@@ -1,0 +1,21 @@
+{
+  "kind" : "xsm_thetaboostersmoke2",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/smoke/smoke.animation",
+    "position" : [0, 0],
+	"initialVelocity" : [-39, -14.0],
+    "finalVelocity" : [-20, -20],
+    "approach" : [0, 50],
+    "destructionAction" : "shrink",
+    "destructionTime" : 0.85,
+    "fade" : 1,
+    "size" : 1,
+    "layer" : "back",
+    "timeToLive" : 0.85,
+    "variance" : {
+      "initialVelocity" : [8, 8],
+	  "size" : 0.1
+    }
+  }
+}

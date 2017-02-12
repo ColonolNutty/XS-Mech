@@ -1,0 +1,28 @@
+{
+  "projectileName" : "xsm_daisybusterclusterfire",
+  "physics" : "grenade",
+  "bounces" : 0,
+//  "level" : 3,
+  "timeToLive" : 5,
+  "image" : "xsm_daisybusterclusterfire.png",
+  "frames" : "xsm_daisybusterclusterfire.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 4,
+  "speed" : 30,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/smallregularexplosion/smallregularexplosion.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "molotovflame",
+      "fuzzAngle" : 0,
+      "inheritDamageFactor" : 1,
+      "angleAdjust" : 35
+    }
+  ],
+  "power" : 10,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

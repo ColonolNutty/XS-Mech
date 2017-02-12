@@ -1,0 +1,12 @@
+{
+  "name" : "mod_xsmech",
+  "path" : ".",
+  "dependencies" : [ ],
+  "metadata": {
+    "description" : "XS Corporation Mech Pack",
+    "author" : "TShinzon aka Masterduck",
+	"update_by" : "SMT50001, AngieTheDemoness, dobroivan",
+  "vehicle_upgrade" : "LoPhatKao",
+	"version_number" : "1.1"
+  }
+}

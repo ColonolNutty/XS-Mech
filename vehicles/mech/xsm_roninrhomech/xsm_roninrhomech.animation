@@ -1,0 +1,2822 @@
+{
+  "sounds" : {
+	"mechStartupSound" : ["/sfx/xsm_NoSound.ogg"],
+	"mechShutdownSound" : ["/sfx/tech/mech_powerdown.ogg"],
+	"jumpSound" : ["/sfx/xsm_MechJump01.ogg"],
+	"dashSound" : ["/sfx/gun/grenadeblast2.ogg"],
+	"backHopSound" : ["/sfx/tech/mech_jump3.ogg"],
+	"hoverInitiateSound" : ["/sfx/gun/fireblast.ogg"],
+	"mechCannonFireSound" : ["/sfx/gun/shotgun4.ogg"],
+	"mechGunHolsterSound" : ["/sfx/objects/bunkercabinet_close.ogg"],
+	"mechGunIdleSound" : ["/sfx/objects/bunkercabinet_open.ogg"],
+	"mechGunFireSound" : ["/sfx/gun/plasma_sniper4.ogg"],
+	"mechGunCoolingSound" : ["/sfx/gun/reload/grenade_reload_clip3.ogg"],
+	"mechGunReadySound" : ["/sfx/xsm_NoSound.ogg"]
+    },
+
+  "animatedParts" : {
+    "stateTypes" : {	
+      "movement" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : { },
+		  "hoverIdle" : { },
+		  "hoverF" : { },
+		  "hoverB" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+            "properties" : {
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [0, 0.5], [0, 0.5], [0, 0.375], [0, 0.375] ]
+            }
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, 0.25], [0, 0.25], [0, 0.125], [0, 0] ]
+            }
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end",
+			"properties" : {
+              "immediateSound" : "/sfx/tech/mech_step.ogg"
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [0, -0.25], [0, 0] ]
+            }
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+			"properties" : {
+              "immediateSound" : "/sfx/tech/mech_step.ogg"
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [0, -1.0], [0, -0.75], [0, -0.5], [0, -0.25] ]
+            }
+          },		
+		  
+		  "stand" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, -1.0], [0, -0.75], [0, -0.5], [0, -0.25] ]
+            }
+          },
+
+		  "sit" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, -0.25], [0, -0.50], [0, -0.75], [0, -1.00] ]
+            }
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.ogg", "", "", "", "", "/sfx/xsm_MechStepLight3.ogg", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          },
+		  
+		  "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.ogg", "", "", "", "", "/sfx/xsm_MechStepLight3.ogg", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.ogg", "", "", "", "", "/sfx/xsm_MechStepLight3.ogg", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.ogg", "", "", "", "", "/sfx/xsm_MechStepLight3.ogg", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          },
+		  
+		"backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.ogg", "", "", "", "", "/sfx/xsm_MechStepLight3.ogg", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          }
+        }
+      },
+
+      "frontArmPauldronMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+          "idle" : { },
+		  "hoverIdle" : { },
+		  "hoverF" : { },
+		  "hoverB" : { },
+		  "rot.0" : { },
+		  "rot.1" : { },
+		  "rot.2" : { },
+		  "rot.3" : { },
+		  "rot.4" : { },
+		  "rot.5" : { },
+		  "rot.6" : { },
+		  "rot.7" : { },
+		  "rot.8" : { },
+		  "rot.9" : { },
+		  "rot.10" : { },
+		  "rot.11" : { },
+		  "rot.12" : { },
+		  "rot.13" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end"
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "gunTurnOn" : {
+            "frames" : 6,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+		  
+		  "gunTurnOff" : {
+            "frames" : 6,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+		  
+		  "gunFire" : {
+            "frames" : 8,
+            "cycle" : 1.0,
+            "mode" : "end"
+          },
+		  
+		  "gunCool" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "end"
+          }
+		}
+      },
+
+      "frontArmMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+          "idle" : { },
+		  "hoverIdle" : { },
+		  "hoverF" : { },
+		  "hoverB" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end"
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          }
+        }
+      },	
+
+      "frontArmAltMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+          "idle" : { },
+		  "hoverIdle" : { },
+		  "hoverF" : { },
+		  "hoverB" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end"
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "gunTurnOn" : {
+            "frames" : 6,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+		  
+		  "gunTurnOff" : {
+            "frames" : 6,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+		  
+		  "gunFire" : {
+            "frames" : 8,
+            "cycle" : 1.0,
+            "mode" : "end"
+          },
+		  
+		  "gunCool" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+		  
+		  "rotation" : {
+          }
+        }
+      },	  
+	  
+      "backArmMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+          "idle" : { },
+		  "hoverIdle" : { },
+		  "hoverF" : { },
+		  "hoverB" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end"
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          }
+        }
+      }, 
+	  
+      "backArmAltMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+          "idle" : { },
+		  "hoverIdle" : { },
+		  "hoverF" : { },
+		  "hoverB" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end"
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "gunTurnOn" : {
+            "frames" : 6,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+		  
+		  "gunTurnOff" : {
+            "frames" : 6,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+		  
+		  "gunFire" : {
+            "frames" : 8,
+            "cycle" : 0.7,
+            "mode" : "end"
+          },
+		  
+		  "gunCool" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+		  
+		  "rotation" : {
+          }
+        }
+      },
+
+      "frontFiring" : {
+        "default" : "off",
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.5,
+            "mode" : "loop"
+          },
+
+          "off" : { }
+        }
+      },
+	  
+      "frontLaser" : {
+	    "default" : "off",
+        "states" : {
+          "fire" : {
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_HeatBeam.ogg"
+            }	  
+		  },
+          "fade" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+            "mode" : "transition",
+			"transition" : "off"
+          },
+          "off" : { }
+        }
+      },
+
+      "backFiring" : {
+	    "default" : "off",
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.5,
+            "mode" : "loop"
+          },
+
+          "off" : { }
+        }
+      },	 
+
+      "backLaser" : {
+	    "default" : "off",
+        "states" : {
+          "fire" : {
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_HeatBeam.ogg" //"/sfx/projectiles/sonic_blast2.ogg"
+            }	  
+		  },
+          "fade" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+            "mode" : "transition",
+			"transition" : "off"
+          },
+          "off" : { }
+        }
+      },	 
+	  
+      "frontCannonFiring" : {
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+
+          "off" : { }
+        }
+      },
+	  
+      "backCannonFiring" : {
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+
+          "off" : { }
+        }
+      },
+	  
+      "frontRecoil" : {
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+
+          "idle" : { }
+        }
+      },
+
+      "backRecoil" : {
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+
+          "idle" : { }
+        }
+      },
+	  
+	  "cap" : {
+	    "default" : "on",
+	    "states" : {
+		  "on" : { },
+		  "off" : { }
+		}
+	  },
+
+	  "hoverFlame" : {
+	    "default" : "off",
+		"states" : {
+		  "on" : {
+            "frames" : 4,
+            "cycle" : 0.4,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ThetaJetpack.ogg"
+            }		  
+		  },
+		  "off" : {  }
+		}
+	  },	  
+	  
+	  "jetFlame" : {
+	    "default" : "off",
+		"states" : {
+		  "dash" : {
+            "frames" : 3,
+            "cycle" : 0.3,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ThetaJetpack.ogg"
+            }		  
+		  },
+		  "boost" : {
+            "frames" : 3,
+            "cycle" : 0.3,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ThetaJetpack.ogg"
+            }		  
+		  },
+		  "off" : {  }
+		}
+	  },
+  
+      "jetPack" : {
+	    "default" : "off",
+        "states" : {
+          "boost0" : {  },
+          "boost1" : {  },
+          "boost2" : {  },
+          "boost3" : {  },
+          "turnoff3" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "transition",
+			"transition" : "off",
+			"properties" : {
+              "immediateSound" : "/sfx/objects/bunkerslidingdoor_close.ogg"
+            }
+          },
+          "turnoff2" : {
+            "frames" : 3,
+            "cycle" : 0.375,
+            "mode" : "transition",
+			"transition" : "off",
+			"properties" : {
+              "immediateSound" : "/sfx/objects/bunkerslidingdoor_close.ogg"
+            }
+          },
+          "turnoff1" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "transition",
+			"transition" : "off",
+			"properties" : {
+              "immediateSound" : "/sfx/objects/bunkerslidingdoor_close.ogg"
+            }
+          },
+          "off" : { }
+        }
+      },
+	  
+	  "torso" : {
+	    "default" : "idle",
+		"states" : {
+		  "turnOff" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end",
+			"frameProperties" : {
+              "immediateSound" : [ "/sfx/objects/apexcooldoor_open.ogg", "", "", "", "", "/sfx/objects/apexstatue3_switchon.ogg", "", "" ]
+            }			
+		  },
+		  "turnOn" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end",
+			"frameProperties" : {
+              "immediateSound" : [ "/sfx/objects/apexcooldoor_close.ogg", "", "", "", "", "/sfx/objects/apexstatue3_switchon.ogg", "", "/sfx/objects/camera_alert_off.ogg" ]
+            }
+		  },
+		  "idle" : {  },
+		  "open" : {  },
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+		  "idleToward" : { },
+		  "idleAway" : { },
+		  
+          "turnAway" : {
+            "frames" : 3,
+            "cycle" : 0.33,
+            "mode" : "end"
+          },
+		  
+          "turnToward" : {
+            "frames" : 3,
+            "cycle" : 0.33,
+            "mode" : "end"
+          }		  
+		}
+	  },
+	  
+	  "crotch" : {
+	    "default" : "idle",
+		"states" : {
+		  "turnOff" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end",
+			"frameProperties" : {
+              "immediateSound" : [ "/sfx/objects/apexcooldoor_open.ogg", "", "", "", "", "/sfx/objects/apexstatue3_switchon.ogg", "", "" ]
+            }			
+		  },
+		  "turnOn" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end",
+			"frameProperties" : {
+              "immediateSound" : [ "/sfx/objects/apexcooldoor_close.ogg", "", "", "", "", "/sfx/objects/apexstatue3_switchon.ogg", "", "/sfx/objects/camera_alert_off.ogg" ]
+            }
+		  },
+		  "idle" : {  },
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          }
+        }
+      },
+      "healthBar" : {
+        "default" : "full",
+
+        "states" : {
+          "full" : { "frames" : 1 },
+          "high" : { "frames" : 1 },
+          "medium" : { "frames" : 1 },
+          "low" : { "frames" : 1 },
+          "none" : { "frames" : 1 }
+        }
+      },
+      "healthBarBack" : {
+        "default" : "on",
+
+        "states" : {
+          "on" : { "frames" : 1 },
+          "off" : { }
+        }
+      }
+    },
+	
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	
+    "parts" : {
+      "healthBar" : {
+        "properties" : {
+          "centered" : false,
+          "zLevel" : 12,
+          "transformationGroups" : [ "healthBar" ],
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "healthBar" : {
+            "full" : {
+              "properties" : { "image" : "/vehicles/mech/xsm_healthbar.png:full" }
+            },
+            "high" : {
+              "properties" : { "image" : "/vehicles/mech/xsm_healthbar.png:high" }
+            },
+            "medium" : {
+              "properties" : { "image" : "/vehicles/mech/xsm_healthbar.png:medium" }
+            },
+            "low" : {
+              "properties" : { "image" : "/vehicles/mech/xsm_healthbar.png:low" }
+            },
+            "none" : {
+              "properties" : { "image" : "/vehicles/mech/xsm_healthbar.png:none" }
+            }
+          }
+        }
+      },
+      
+      "healthBarBack" : {
+        "properties" : {
+          "centered" : false,
+          "zLevel" : 11,
+          "transformationGroups" : [ "healthBarBack" ],
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "healthBarBack" : {
+            "on" : {
+              "properties" : { "image" : "/vehicles/mech/xsm_healthbarback.png" }
+            },
+            "off" : { }
+          }
+        }
+      },
+	
+	  "backGunLaser" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -3,
+		  "back" : true,
+          "offset" : [6.375, 1.375],
+          "rotationGroup" : "backArm",
+		  "transformationGroups" : ["backLaser"],
+          "rotationCenter" : [1.25, 1.625],
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "backLaser" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_heatbeam.png:0"
+              }
+            },
+            "fade" : {
+              "properties" : {
+                "image" : "xsm_heatbeam.png:<frameIndex>"
+              }
+            }			
+          }
+        }
+      },
+	 
+	  "backGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -2.5,
+		  "back" : true,
+          "offset" : [7.375, 1.375],
+          "rotationGroup" : "backArm",
+          "rotationCenter" : [1.25, 1.625],
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "backFiring" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_heatbeamstart.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "backArm" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -2,
+          "back" : true,
+		  "offset" : [1.25, 1.625],
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "backArmMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:idle"
+              }
+            },
+            "hoverIdle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:hoverI"
+              }
+            },
+            "hoverF" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:hoverF"
+              }
+            },
+            "hoverB" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:hoverB"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 1.25], [1.25, 1.25], [1.25, 1.5], [1.25, 1.5] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 1.375], [1.25, 1.375], [1.25, 1.5], [1.25, 1.625] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 1.425], [1.25, 1.525] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 1.225], [1.25, 1.325], [1.25, 1.425], [1.25, 1.525] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875], [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875], [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875], [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875], [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarm.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875], [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875] ]
+              }
+            }
+          }	    
+        }
+      },
+	  
+      "backArmAlt" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -2,
+          "back" : true,
+		  "offset" : [1.25, 1.625],
+          "rotationGroup" : "backArm",
+          "rotationCenter" : [1.25, 1.625],
+          
+		    "backGunRotationPoint" : [0, 0],
+			"backGunCasingPoint" : [2, -2],
+            "backGunFirePoint" : [5.125, -0.25],
+          "anchorPart" : "body"
+          
+        },
+
+        "partStates" : {
+          "backArmAltMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:idle"
+              }
+            },
+            "hoverIdle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:hoverI"
+              }
+            },
+            "hoverF" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:hoverF"
+              }
+            },
+            "hoverB" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:hoverB"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 1.25], [1.25, 1.25], [1.25, 1.5], [1.25, 1.5] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 1.375], [1.25, 1.375], [1.25, 1.5], [1.25, 1.625] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 1.425], [1.25, 1.525] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 1.225], [1.25, 1.325], [1.25, 1.425], [1.25, 1.525] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875], [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875], [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875], [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875], [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875], [1.25, 2.0], [1.25, 1.75], [1.25, 1.625], [1.25, 1.75], [1.25, 1.875] ]
+              }
+            },
+			"gunTurnOn" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:gunTurnOn.<frame>"
+              }
+            },
+			"gunTurnOff" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:gunTurnOff.<frame>"
+              }
+            },
+			"gunFire" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:gunFire.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [1.0, 1.625], [1.125, 1.625], [1.25, 1.625], [1.25, 1.625], [1.25, 1.625], [1.25, 1.625], [1.25, 1.625], [1.25, 1.625], [1.25, 1.625], [1.25, 1.625] ]
+              }
+            },
+			"gunCool" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:gunCool.<frame>"
+              }
+            },
+			"rotation" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbarmalt.png:rotation"
+              }
+            }
+          }	    
+        }
+      }, 
+	  
+      "hoverFlameBack" : {	  
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -1.5,
+          "back" : true,
+		  "offset" : [0.625, -6.25],
+          "rotationGroup" : "backHover",
+          "rotationCenter" : [0.625, -0.5],
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {		
+		  "hoverFlame" : {
+			"on" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechhoverflame.png:<frameIndex>"
+			  }
+			},	
+			"off" : {  }
+		  }
+		}
+      },
+	
+      "backLeg" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -1,
+          "back" : true,
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:idle"
+              }
+            },
+            "hoverIdle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:hoverI"
+              }
+            },
+            "hoverF" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:hoverF"
+              }
+            },
+            "hoverB" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:hoverB"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.5], [0, -0.5], [0, -0.375], [0, -0.375] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.0], [0, 0.75], [0, 0.5], [0, 0.25] ]
+              }
+            },
+			"stand" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.0], [0, 0.75], [0, 0.5], [0, 0.25] ]
+              }
+            },
+			"sit" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:sit.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0.5], [0, 0.75], [0, 1.0] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            }
+          }
+        }
+      },
+	  
+      "backCap" : {	  
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -0.9,
+          "back" : true,
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {		
+		  "cap" : {
+			"on" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechcannon.png:capB"
+			  }
+			},	
+			"off" : {  }
+		  }
+		}
+      },	
+	  
+	  "backCannonFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -0.8,
+		  "back" : true,
+          "offset" : [3.75, -0.625],
+          "rotationGroup" : "cannon",
+          "rotationCenter" : [1.375, -0.625],
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "backCannonFiring" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_bulletmuzzle2.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "backCannon" : {	  
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -0.7,
+		  "back" : true,
+          "offset" : [1.375, -0.625],
+          "rotationGroup" : "cannon",
+          "rotationCenter" : [1.375, -0.625],
+          
+		    "backCannonFirePoint" : [1.375, 0],
+          "anchorPart" : "body"
+          
+        },
+
+        "partStates" : {		
+		  "backRecoil" : {
+			"fire" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechcannon.png:fire.<frame>"
+			  }
+			},	
+			"idle" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechcannon.png:rotation"
+			  }			
+			}
+		  }
+		}
+      },
+
+      "jetFlame" : {	  
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -0.5,
+          "back" : true,
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {		
+		  "jetFlame" : {
+			"dash" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechjetflame.png:dash.<frameIndex>"
+			  }
+			},
+			"boost" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechjetflame.png:boost.<frameIndex>"
+			  }
+			},			
+			"off" : {  }
+		  }
+		}
+      },	  
+	  
+      "jetPack" : {	  
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 0,
+          "back" : true,
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {		
+		  "jetPack" : {
+			"boost0" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechjetpack.png:boost.0"
+			  }
+			},
+			"boost1" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechjetpack.png:boost.1"
+			  }
+			},			
+			"boost2" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechjetpack.png:boost.2"
+			  }
+			},			
+			"boost3" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechjetpack.png:boost.3"
+			  }
+			},			
+			"turnoff3" : {
+			  "properties" : {
+			    "image" : "xsm_roninrhomechjetpack.png:turnoff3.<frameIndex>"
+			  }
+			},
+			"turnoff2" : {
+			  "properties" : {
+			    "image" : "xsm_roninrhomechjetpack.png:turnoff2.<frameIndex>"
+			  }
+			},
+			"turnoff1" : {
+			  "properties" : {
+			    "image" : "xsm_roninrhomechjetpack.png:turnoff1.<frameIndex>"
+			  }
+			},			
+			"off" : {
+			  "properties" : {
+			    "image" : "xsm_roninrhomechjetpack.png:off"
+			  }
+			}
+		  }
+        }
+      },
+	  
+      "background" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : -0.5,
+          "back" : true,
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "torso" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:idle"
+              }
+            },
+            "stand" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:idle"
+              },
+              "frameProperties" : {
+//                "offset" : [ [0, -1.0], [0, -0.75], [0, -0.5], [0, -0.25] ]
+              }
+            },
+            "sit" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:idle"
+              },
+              "frameProperties" : {
+//                "offset" : [ [0, -0.25], [0, -0.5], [0, -0.75], [0, -1.0] ]
+              }
+            },
+            "open" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:turnOff.8"
+              },
+              "frameProperties" : {
+//                "offset" : [ [0, -0.25], [0, -0.5], [0, -0.75], [0, -1.0] ]
+              }
+            },
+			"turnOff" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:turnOff.<frame>"
+              }
+            },
+			"turnOn" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:turnOn.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:walk.<frame>"
+              },
+              "frameProperties" : {
+//                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:walk.<frame>"
+              },
+              "frameProperties" : {
+//                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:walk.<frame>"
+              },
+              "frameProperties" : {
+//                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:bwalk.<frame>"
+              },
+              "frameProperties" : {
+//                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:bwalk.<frame>"
+              },
+              "frameProperties" : {
+//                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+			"idleToward" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:toward"
+              }
+            },
+			"idleAway" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:away"
+              }
+            },
+			"turnAway" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:turnAway.<frame>"
+              }
+            },
+			"turnToward" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbackground.png:turnToward.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "crotch" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 0.5,
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "crotch" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:crotchIdle"
+              }
+            },
+			"turnOff" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:crotchIdle"
+              }
+            },
+			"turnOn" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:crotchIdle"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:crotchwalk.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.125], [0, 0], [0, 0], [0, 0], [0, 0.125], [0, 0.125], [0, 0], [0, 0], [0, 0], [0, 0.125] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:crotchwalk.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.125], [0, 0], [0, 0], [0, 0], [0, 0.125], [0, 0.125], [0, 0], [0, 0], [0, 0], [0, 0.125] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:crotchwalk.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.125], [0, 0], [0, 0], [0, 0], [0, 0.125], [0, 0.125], [0, 0], [0, 0], [0, 0], [0, 0.125] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:crotchbwalk.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.125], [0, 0], [0, 0], [0, 0], [0, 0.125], [0, 0.125], [0, 0], [0, 0], [0, 0], [0, 0.125] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:crotchbwalk.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.125], [0, 0], [0, 0], [0, 0], [0, 0.125], [0, 0.125], [0, 0], [0, 0], [0, 0], [0, 0.125] ]
+              }
+            }
+          }
+        }
+      },
+
+      "body" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 4,
+          "sitPosition" : [0.375, 2.125]
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {            },
+		  "hoverIdle" : { },
+		  "hoverF" : { },
+		  "hoverB" : { },
+            "jump" : {
+              "frameProperties" : {
+                "offset" : [ [0, 0.5], [0, 0.5], [0, 0.375], [0, 0.375] ]
+              }
+            },
+            "fall" : {
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0.25], [0, 0.125], [0, 0] ]
+              }
+            },
+            "land" : {
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, 0] ]
+              }
+            },
+            "landHard" : {
+              "frameProperties" : {
+                "offset" : [ [0, -1.0], [0, -0.75], [0, -0.5], [0, -0.25] ]
+              }
+            },
+            "stand" : {
+              "frameProperties" : {
+                "offset" : [ [0, -1.0], [0, -0.75], [0, -0.5], [0, -0.25] ]
+              }
+            },
+            "sit" : {
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.5], [0, -0.75], [0, -1.0] ]
+              }
+            },
+            "walk" : {
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "run" : {
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalk" : {
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            }
+          }
+        }
+      },
+      
+      "torso" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 4,
+          "anchorPart" : "body"
+        },
+        "partStates" : {
+          "torso" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:idle"
+              }
+            },
+            "open" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:open"
+              }
+            },
+			"turnOff" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:turnOff.<frame>"
+              }
+            },
+			"turnOn" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:turnOn.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:walk.<frame>"
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:walk.<frame>"
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:walk.<frame>"
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:bwalk.<frame>"
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:bwalk.<frame>"
+              }
+            },
+			"idleToward" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:toward"
+              }
+            },
+			"idleAway" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:away"
+              }
+            },
+			"turnAway" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:turnAway.<frame>"
+              }
+            },
+			"turnToward" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechbody.png:turnToward.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "hoverFlameFront" : {	  
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 4.5,
+		  "offset" : [-2.0, -6.25],
+          "rotationGroup" : "frontHover",
+          "rotationCenter" : [-2.0, -0.5],
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {		
+		  "hoverFlame" : {
+			"on" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechhoverflame.png:<frameIndex>"
+			  }
+			},	
+			"off" : {  }
+		  }
+		}
+      },
+
+      "frontLeg" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 5,
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:idle"
+              }
+            },
+            "hoverIdle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:hoverI"
+              }
+            },
+            "hoverF" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:hoverF"
+              }
+            },
+            "hoverB" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:hoverB"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.5], [0, -0.5], [0, -0.375], [0, -0.375] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.0], [0, 0.75], [0, 0.5], [0, 0.25] ]
+              }
+            },
+			"stand" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.0], [0, 0.75], [0, 0.5], [0, 0.25] ]
+              }
+            },
+			"sit" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:sit.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0.5], [0, 0.75], [0, 1.0] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            }
+          }
+        }
+      },  
+	  
+	  "frontCannonFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 5.2,
+          "offset" : [2.625, -0.625],
+          "rotationGroup" : "cannon",
+          "rotationCenter" : [0.25, -0.625]
+        },
+
+        "partStates" : {
+          "frontCannonFiring" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_bulletmuzzle2.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "frontCannon" : {	  
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 5.3,
+          "offset" : [0.25, -0.625],
+          "rotationGroup" : "cannon",
+          "rotationCenter" : [0.25, -0.625],
+          
+		    "frontCannonFirePoint" : [1.375, 0],
+          "anchorPart" : "body"
+          
+        },
+
+        "partStates" : {		
+		  "frontRecoil" : {
+			"fire" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechcannon.png:fire.<frame>"
+			  }
+			},	
+			"idle" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechcannon.png:rotation"
+			  }			
+			}
+		  }
+		}
+      },
+	  
+      "frontCap" : {	  
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 5.4,
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {		
+		  "cap" : {
+			"on" : {
+			  "properties" : {
+				"image" : "xsm_roninrhomechcannon.png:capF"
+			  }
+			},	
+			"off" : {  }
+		  }
+		}
+      },	
+	  
+	  "frontGunLaser" : {
+        "properties" : {
+//          "centered" : true,
+          "zLevel" : 5.5,
+          "offset" : [2.625, 1.375],
+          "rotationGroup" : "frontArm",
+		  "transformationGroups" : ["frontLaser"],
+          "rotationCenter" : [-2.5, 1.625]
+        },
+
+        "partStates" : {
+          "frontLaser" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_heatbeam.png:0"
+              }
+            },
+            "fade" : {
+              "properties" : {
+                "image" : "xsm_heatbeam.png:<frameIndex>"
+              }
+            }			
+          }
+        }
+      },
+	  
+	  "frontGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 6,
+          "offset" : [3.625, 1.375],
+          "rotationGroup" : "frontArm",
+          "rotationCenter" : [-2.5, 1.625]
+        },
+
+        "partStates" : {
+          "frontFiring" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_heatbeamstart.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+
+      "frontArm" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 7,
+		  "offset" : [-2.5, 1.625],
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "frontArmMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:idle"
+              }
+            },
+            "hoverIdle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:hoverI"
+              }
+            },
+            "hoverF" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:hoverF"
+              }
+            },
+            "hoverB" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:hoverB"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 1.25], [-2.5, 1.25], [-2.5, 1.5], [-2.5, 1.5] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.5], [-2.5, 2.5], [-2.5, 1.5], [-2.5, 1.625] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 1.425], [-2.5, 1.525] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 1.225], [-2.5, 1.325], [-2.5, 1.425], [-2.5, 1.525] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875], [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875], [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875], [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875], [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarm.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.0], [-2.5, 1.75], [-2.5, 0], [-2.5, 1.75], [-2.5, 1.875], [-2.5, 2.0], [-2.5, 1.75], [-2.5, 0], [-2.5, 1.75], [-2.5, 1.875] ]
+              }
+            }
+          }	    
+        }
+      },	 
+
+      "frontArmAlt" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 7,
+		  "offset" : [-2.5, 1.625],
+          "rotationGroup" : "frontArm",
+          "rotationCenter" : [-2.5, 1.625],
+          
+		    "frontGunRotationPoint" : [0, 0],
+			"frontGunCasingPoint" : [2, -2],
+            "frontGunFirePoint" : [5.125, -0.25],
+          "anchorPart" : "body"
+          
+        },
+
+        "partStates" : {
+          "frontArmAltMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:idle"
+              }
+            },
+            "hoverIdle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:hoverI"
+              }
+            },
+            "hoverF" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:hoverF"
+              }
+            },
+            "hoverB" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:hoverB"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 1.25], [-2.5, 1.25], [-2.5, 1.5], [-2.5, 1.5] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.5], [-2.5, 2.5], [-2.5, 1.5], [-2.5, 1.625] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 1.425], [-2.5, 1.525] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 1.225], [-2.5, 1.325], [-2.5, 1.425], [-2.5, 1.525] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875], [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875], [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875], [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875], [-2.5, 2.0], [-2.5, 1.75], [-2.5, 1.625], [-2.5, 1.75], [-2.5, 1.875] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.5, 2.0], [-2.5, 1.75], [-2.5, 0], [-2.5, 1.75], [-2.5, 1.875], [-2.5, 2.0], [-2.5, 1.75], [-2.5, 0], [-2.5, 1.75], [-2.5, 1.875] ]
+              }
+            },
+			"gunTurnOn" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:gunTurnOn.<frame>"
+              }
+            },
+			"gunTurnOff" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:gunTurnOff.<frame>"
+              }
+            },
+			"gunFire" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:gunFire.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [-2.75, 1.625], [-2.625, 1.625], [-2.5, 1.625], [-2.5, 1.625], [-2.5, 1.625], [-2.5, 1.625], [-2.5, 1.625], [-2.5, 1.625], [-2.5, 1.625], [-2.5, 1.625] ]
+              }
+            },
+			"gunCool" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:gunCool.<frame>"
+              }
+            },
+			"rotation" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechfarmalt.png:rotation"
+              }
+            }
+          }	    
+        }
+      },		  
+
+      "frontArmPauldron" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 7.5,
+          "rotationGroup" : "frontArmPauldron",
+          "rotationCenter" : [-2.5, 1.625],
+          "anchorPart" : "body"
+        },
+
+        "partStates" : {
+          "frontArmPauldronMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:idle"
+              }
+            },
+            "hoverIdle" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:hoverI"
+              }
+            },
+            "hoverF" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:hoverF"
+              }
+            },
+            "hoverB" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:hoverB"
+              }
+            },
+			"rot.0" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.0"
+              }
+            },
+			"rot.1" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.1"
+              }
+            },
+			"rot.2" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.2"
+              }
+            },
+			"rot.3" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.3"
+              }
+            },
+			"rot.4" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.4"
+              }
+            },
+			"rot.5" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.5"
+              }
+            },
+			"rot.6" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.6"
+              }
+            },
+			"rot.7" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.7"
+              }
+            },
+			"rot.8" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.8"
+              }
+            },
+			"rot.9" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.9"
+              }
+            },
+			"rot.10" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.10"
+              }
+            },
+			"rot.11" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.11"
+              }
+            },
+			"rot.12" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.12"
+              }
+            },
+			"rot.13" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rot.13"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.375], [0, -0.125], [0, -0.125] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.2], [0, -0.1] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.4], [0, -0.3], [0, -0.2], [0, -0.1] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+			"gunTurnOn" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:gunTurnOn.<frame>"
+              }
+            },
+			"gunTurnOff" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:gunTurnOff.<frame>"
+              }
+            },
+			"gunFire" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:gunFire.<frame>"
+              }
+            },
+			"gunCool" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:gunCool.<frame>"
+              }
+            },
+			"rotation" : {
+              "properties" : {
+                "image" : "xsm_roninrhomechpauldron.png:rotation"
+              }
+            }
+		  }
+        }
+      }  
+	  
+	  
+    }
+  },
+
+  "rotationGroups" : {
+    "frontArm" : {
+      "angularVelocity" : 5.0
+    },
+    "backArm" : {
+      "angularVelocity" : 5.0
+    },
+	"frontArmPauldron" : {
+	  "angularVelocity" : 100
+	},
+	"cannon" : {
+	  "angularVelocity" : 10
+	},
+    "frontHover" : {
+      "angularVelocity" : 100
+    },
+    "backHover" : {
+      "angularVelocity" : 100
+    }
+  },
+  
+  "transformationGroups" : {
+    "frontLaser" : {
+//      "pivot" : [0, 0]
+    },
+    "backLaser" : {
+//      "pivot" : [0, 0]
+    },
+    "healthBar" : { "interpolated" : false },
+    "healthBarBack" : { "interpolated" : false }
+  },
+  
+  "particleEmitters" : {
+    "mechActivateParticles" : {
+      "particles" : [ ]
+    },
+    "mechDeactivateParticles" : {
+      "particles" : [ 
+	    {
+	    "particle" : "xsm_rhomechwarpout"
+		}
+	  ]
+    },
+	"mechSteam" : {
+	  "emissionRate" : 10.0,
+	  "particles" : [
+	    {
+		  "particle" : "xsm_mechgravsteam",
+		  "offset" : [-1.0, 2.0]
+		},	
+	    {
+		  "particle" : "xsm_mechgravsteam",
+		  "offset" : [-1.0, 0.0]
+		}
+	  ]
+	},
+	"mechSteam2" : {
+	  "emissionRate" : 5.0,
+	  "particles" : [
+	    {
+		  "particle" : "xsm_mechgravsteam",
+		  "offset" : [-1.0, 2.0]
+		},	
+	    {
+		  "particle" : "xsm_mechgravsteam",
+		  "offset" : [-1.0, 0.0]
+		}
+	  ]
+	},
+	"hardLandingParticles" : {
+      "particles" : [
+        {
+          "particle" : "xsm_thetamechstepdustback",
+          "offset" : [1.0, -4.25]
+        },
+        {
+          "particle" : "xsm_thetamechstepdust",
+          "offset" : [-1.0, -4.25]
+        }	  
+	  ]
+    },
+	"veryHardLandingParticles" : {
+      "particles" : [
+        {
+          "particle" : "xsm_thetamechstepdustback",
+          "offset" : [1.0, -3.5]
+        },
+        {
+          "particle" : "xsm_thetamechstepdust",
+          "offset" : [-1.0, -3.5]
+        },
+        {
+          "particle" : "xsm_mechlandingdust",
+          "offset" : [-1.0, -3.25]
+        },
+        {
+          "particle" : "xsm_mechlandingdust",
+          "offset" : [1.0, -3.25]
+        }		
+	  ]
+    },
+	"skidParticles" : {
+      "emissionRate" : 75.0,
+      "particles" : [
+        {
+          "particle" : "skid1",
+          "offset" : [1.0, -5.25]
+        },
+        {
+          "particle" : "skid1",
+          "offset" : [-1.0, -5.25]
+        },
+        {
+          "particle" : "sparks",
+          "offset" : [-1.0, -5.25]
+        },
+        {
+          "particle" : "sparks",
+          "offset" : [1.0, -5.25]
+        },
+        {
+          "particle" : "sparks",
+          "offset" : [-1.0, -5.25]
+        },
+        {
+          "particle" : "sparks",
+          "offset" : [1.0, -5.25]
+        }			
+	  ]
+    },
+	"hoverParticles" : {
+	  "emissionRate" : 100.0,
+	  "particles" : [
+        {
+          "particle" : "xsm_roninrhoboostsmoke",
+          "offset" : [-2.0, -4.75],
+		  "initialVelocity" : [0, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostsmoke",
+          "offset" : [0.625, -4.75],
+		  "initialVelocity" : [0, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostflame",
+          "offset" : [-2.0, -4.75],
+		  "initialVelocity" : [0, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostflame",
+          "offset" : [0.625, -4.75],
+		  "initialVelocity" : [0, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostsmallflame",
+          "offset" : [-2.0, -4.75],
+		  "initialVelocity" : [0, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostsmallflame",
+          "offset" : [0.625, -4.75],
+		  "initialVelocity" : [0, -35]
+        }
+	  ]
+	},
+	"hoverFParticles" : {
+	  "emissionRate" : 100.0,
+	  "particles" : [
+        {
+          "particle" : "xsm_roninrhoboostsmoke",
+          "offset" : [-2.5, -4.75],
+		  "initialVelocity" : [-5, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostsmoke",
+          "offset" : [0, -4.75],
+		  "initialVelocity" : [-5, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostflame",
+          "offset" : [-2.5, -4.75],
+		  "initialVelocity" : [-5, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostflame",
+          "offset" : [0, -4.75],
+		  "initialVelocity" : [-5, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostsmallflame",
+          "offset" : [-2.5, -4.75],
+		  "initialVelocity" : [-5, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostsmallflame",
+          "offset" : [0, -4.75],
+		  "initialVelocity" : [-5, -35]
+        }
+	  ]
+	},
+	"hoverBParticles" : {
+	  "emissionRate" : 100.0,
+	  "particles" : [
+        {
+          "particle" : "xsm_roninrhoboostsmoke",
+          "offset" : [-1.5, -4.75],
+		  "initialVelocity" : [5, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostsmoke",
+          "offset" : [1.25, -4.75],
+		  "initialVelocity" : [5, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostflame",
+          "offset" : [-1.5, -4.75],
+		  "initialVelocity" : [5, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostflame",
+          "offset" : [1.25, -4.75],
+		  "initialVelocity" : [5, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostsmallflame",
+          "offset" : [-1.5, -4.75],
+		  "initialVelocity" : [5, -35]
+        },
+        {
+          "particle" : "xsm_roninrhoboostsmallflame",
+          "offset" : [1.25, -4.75],
+		  "initialVelocity" : [5, -35]
+        }
+	  ]
+	}
+  }
+}

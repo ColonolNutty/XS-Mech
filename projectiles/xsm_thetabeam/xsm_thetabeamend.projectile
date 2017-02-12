@@ -1,0 +1,29 @@
+{
+  "projectileName" : "xsm_thetabeamend",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "/animations/plasmapoof/plasmapoof.png",
+  "frames" : "/animations/plasmapoof/plasmapoof.png",
+  "frameNumber" : 1,
+  "timeToLive" : 0,
+  "power" : 20,
+  "speed" : 0,
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/xsm_thetabeam/xsm_thetabeamexplosion.config"
+    },
+	{
+      "action" : "explosion",
+      "foregroundRadius" : 2.5,
+      "backgroundRadius" : 0,
+      "explosiveDamageAmount" : 75,
+      "harvestLevel" : 99,
+      "delaySteps" : 0
+    }
+  ],
+  "damagePoly" : [ [-6, -6], [6, -6], [6, 6], [-6, 6] ],
+  "damageKind" : "plasma"
+}

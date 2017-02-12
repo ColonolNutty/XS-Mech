@@ -1,0 +1,14 @@
+{
+  "author" : "LoPhatKao, SMT50001, TShinzon",
+  "dependencies" : [],
+  "description" : "[h1]XS Mech Vehicles[/h1]\n\nBuy the Controllers at Penguin Pete in the Outpost \n(or his Portable Outpost counterpart) \n{10% discount on controllers with Tabula Rasa!}\n\nMore Info: [url=http://community.playstarbound.com/resources/xs-mechs-vehicle-edition.3407/] CF Mod Forum Link [/url]\nMore Mechs!: [url=http://steamcommunity.com/sharedfiles/filedetails/?id=740834534] ZZ Mech Addon [/url] - Highly Recommended!\n\nOriginal art & code by TShinzon \nSpirited update by SMT50001 \nGlad/Cheerful vehicle update by LoPhatKao \n\n--[[ Your first Workshop Mod? ]]-- \n\nYou may have to restart the game a few times before the mod decides to work (there should be a message popping up during startup). This seems to be a problem with starbound itself. \nAlways check the mod manager in starbound (the little square button in lower right corner) to see if mod loaded correctly.\n\n[h1]Error reports without a pastebin link to your starbound.log WILL be deleted[/h1]\n\n\"Bob\" spam will also be deleted, and your steam account id copied to my list (you are NOT anonymous)\n[h1]           Bob is not wanted - Bob is not needed - Bob needs to gtfo[/h1]\n",
+  "friendlyName" : "XS Mechs - Vehicle Edition",
+  "link" : "steam://url/CommunityFilePage/729428991",
+  "metadata" : {
+    "originalBy" : "Tshinzon"
+  },
+  "name" : "XS_Mechs",
+  "priority" : 5,
+  "steamContentId" : "729428991",
+  "version" : "1.15 Glad/Cheerful Giraffe"
+}

@@ -1,0 +1,18 @@
+{
+  "projectileName" : "xsm_lightparticle",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_lightparticle.png",
+  "frames" : "xsm_lightparticle.png",
+  "frameNumber" : 4,
+  "timeToLive" : 0.03,
+  "power" : 0,
+  "speed" : 0.01,
+  "piercing" : true,
+  "supportsProcessing" : true,
+  "damageKind" : "default",
+  "pointLight" : true,
+  "lightColor" : [240, 219, 160]
+
+}

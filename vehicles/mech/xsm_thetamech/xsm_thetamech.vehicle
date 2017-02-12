@@ -1,0 +1,165 @@
+{
+  "name" : "xsm_thetamech",
+  "boundBox" : [-2.5, -8, 2.5, 5],
+  "slaveControlTimeout" : 2.0,
+  "slaveControlHeartbeat" : 1.0,
+  "canBeHit" : false,
+
+  "script" : "/vehicles/mech/xsm_thetamech.lua",
+  "animation" : "xsm_thetamech.animation",
+  
+  "animationCustom" : {
+    "particleEmitters" : {
+      "smoke1" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [{ "particle" : "burningvehiclesmokefront"}]
+      },
+      
+      "smoke2" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [{ "particle" : "shadowsmoke"},{ "particle" : "burningdustfront"}]
+      },
+      
+      "fire1" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [ { "particle" : "burningdust"},
+                        { "particle" : "campfireflames"},
+                        { "particle" : "fireshard"},
+                        { "particle" : "burningvehiclesmokeback"}]
+
+      },
+
+      "fire2" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [ { "particle" : "burningdust"},
+                        { "particle" : "campfireflames"},
+                        { "particle" : "fireshard"},
+                        { "particle" : "burningvehiclesmokeback"}]
+
+      },
+
+      "damageShards" : {
+        "emissionRate" : 0.0,
+        "burstCount"  : 4,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [{ "particle" : "fireshard"}]
+      },
+
+      "wreckage" : {
+        "active" : false,
+        "emissionRate" : 0.0,
+        "burstCount"  : 8,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [
+                       { "particle" : "hoverbikekhakiwreck2"},
+                       { "particle" : "hoverbikewreck3"},
+                       { "particle" : "hoverbikekhakiwreck4"},
+                       { "particle" : "hoverbikewreck5"}]
+      }
+    }
+  },
+
+  "movementSettings" : {
+    "collisionPoly" : [ [-2.5, -5.0], [-2, -8], [2, -8], [2.5, -5.0], [2.5, 4], [2, 5], [-2, 5], [-2.5, 4] ],
+    "mass" : 20,
+    "airFriction" : 0.5,
+    "groundFriction" : 75.0,
+    "ignorePlatformCollision" : false
+  },
+
+  "loungePositions" : {
+    "seat" : {
+      "part" : "body",
+      "partAnchor" : "sitPosition",
+      "orientation" : "sit",
+      "dance" : "flipswitch",
+      "statusEffects" : ["headlamp","nude","invulnerable","xsm_energyuse"]
+    }
+  },
+
+  "mechHorizontalMovement" : 11,
+  "mechHorizontalBackMovement" : 9,
+  "mechJumpVelocity" : [10, 30],
+  "offGroundFrames" : 8,
+
+  "maxHealth" : 2000,
+  "protection" : 60,
+  "materialKind" : "robotic",
+  "healthBarYAdjust" : 0.75,
+  
+  "energyCostPerSecond" : 30,
+  "energyCostPerBoost" : 15,
+  "energyCostPerPrimaryShot" : 100,
+  "energyCostPerAltShot" : 10,
+  "energyCostPerSecondEmergencyJets" : 30,
+  
+  // Startup/shutdown
+  "mechStartupTime" : 0.75,
+  "mechShutdownTime" : 1.5,
+  
+  "mechBoostPower" : 3200,
+  "mechBoostSpeed" : 40,
+  "mechBoostDuration" : 0.3,
+  "mechBoostChargeInterval" : 0.15,
+  "mechBoostChargeCoefficient" : 0.15,
+  "mechBoostAngle1" : 10,
+  "mechBoostAngle2" : 20,
+  "mechBoostAngle3" : 40,
+  "mechBoostAngle4" : 60,
+  "mechBoostRechargeTime" : 0.9,
+  "mechLandingProjectile" : "xsm_landingimpact",
+  
+  "mechEmergencyBoostSpeed" : 40,
+  "mechEmergencyBoostPower" : 3200,
+  
+  "mechTransformPositionChange" : [0.0, 6],
+  "parentOffset" : [0.2, 0.8],
+
+  "mechCollisionTest" : [-3.5, -2.0, 3.5, 8.5],
+
+  "mechAimLimit" : 35,
+  
+  "mechFireCycle" : 2.0,
+  "mechFireAnimTime" : 0.5,
+  "mechBeamProjectile" : "xsm_thetabeam",
+  "mechBeamLongProjectile" : "xsm_thetabeamlong",
+  "mechBeamProjectileConfig" : {
+    "power" : 50,
+    "speed" : 1
+  },
+  "mechBeamEndProjectile" : "xsm_thetabeamend",
+  "mechBeamEndProjectileConfig" : {
+    "power" : 50
+  },
+  "mechBeamRange" : 100.0,
+  "mechBeamPen" : 10.0,
+  "mechBeamStep" : 0.5,
+  "mechBeamLongStep" : 1.5,
+  "mechBeamWidth" : 5,
+  "mechRecoilSpeed" : 40,
+  "mechRecoilPower" : 9600,
+  
+  "mechGunOffsetFront" : [-3.75, 3],
+  "mechGunOffsetBack" : [2.25, 3],
+
+  "mechAltFireCycle" : 3,
+  "mechAltFireShotInterval" : 0.1,
+  "mechAltProjectile" : "xsm_daisybustergrenadefire",
+  "mechAltProjectileConfig" : {
+    "power" : 15
+  },
+  "mechLevel" : 6,
+  
+  "physicsCollisions" : {
+    "deck" : {
+      "collision" : [ [-0.75, -3.0], [0.75, -3.0], [0.75, -3.6], [-0.75, -3.6] ],
+      "attachToPart" : "body"
+    }
+  }
+
+  
+}

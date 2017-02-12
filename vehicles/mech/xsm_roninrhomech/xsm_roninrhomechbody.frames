@@ -1,0 +1,80 @@
+{
+  "frameGrid" : {
+    "size" : [100, 84],
+    "dimensions" : [15, 3],
+
+    "names" : [
+      [ null, "turnOff.1", "turnOff.2", "turnOff.3", "turnOff.4", "turnOff.5", "turnOff.6", "turnOff.7", "turnOff.8" ],
+      [ null, "toward", "away", "crotchToward", "crotchIdle", "crotchAway" ],
+	  [ null ]
+    ]
+  },
+
+  "aliases" : {
+  
+  "idle" : "turnOff.1",
+  "open" : "turnOff.8",
+ 
+  "turnOn.1" : "turnOff.8",
+  "turnOn.2" : "turnOff.7",
+  "turnOn.3" : "turnOff.6",
+  "turnOn.4" : "turnOff.5",
+  "turnOn.5" : "turnOff.4",
+  "turnOn.6" : "turnOff.3",
+  "turnOn.7" : "turnOff.2",
+  "turnOn.8" : "turnOff.1",
+  
+  "walk.1" : "away",
+  "walk.2" : "away", 
+  "walk.3" : "idle",
+  "walk.4" : "idle",
+  "walk.5" : "toward",
+  "walk.6" : "toward",
+  "walk.7" : "toward",
+  "walk.8" : "idle",
+  "walk.9" : "idle",
+  "walk.10" : "away",
+  
+  "bwalk.10" : "away",
+  "bwalk.9" : "away", 
+  "bwalk.8" : "idle",
+  "bwalk.7" : "idle",
+  "bwalk.6" : "toward",
+  "bwalk.5" : "toward",
+  "bwalk.4" : "toward",
+  "bwalk.3" : "idle",
+  "bwalk.2" : "idle",
+  "bwalk.1" : "away",
+  
+  "turnToward.1" : "away",
+  "turnToward.2" : "idle",
+  "turnToward.3" : "toward",
+  
+  "turnAway.1" : "toward",
+  "turnAway.2" : "idle",
+  "turnAway.3" : "away",
+
+  "crotchwalk.1" : "crotchIdle",
+  "crotchwalk.2" : "crotchToward", 
+  "crotchwalk.3" : "crotchToward",
+  "crotchwalk.4" : "crotchToward",
+  "crotchwalk.5" : "crotchIdle",
+  "crotchwalk.6" : "crotchIdle",
+  "crotchwalk.7" : "crotchAway",
+  "crotchwalk.8" : "crotchAway",
+  "crotchwalk.9" : "crotchAway",
+  "crotchwalk.10" : "crotchIdle",
+  
+  "crotchbwalk.10" : "crotchIdle",
+  "crotchbwalk.9" : "crotchToward", 
+  "crotchbwalk.8" : "crotchToward",
+  "crotchbwalk.7" : "crotchToward",
+  "crotchbwalk.6" : "crotchIdle",
+  "crotchbwalk.5" : "crotchIdle",
+  "crotchbwalk.4" : "crotchAway",
+  "crotchbwalk.3" : "crotchAway",
+  "crotchbwalk.2" : "crotchAway",
+  "crotchbwalk.1" : "crotchIdle"   
+
+  }
+}

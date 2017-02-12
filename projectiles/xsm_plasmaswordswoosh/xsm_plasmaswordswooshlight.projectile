@@ -1,0 +1,18 @@
+{
+  "projectileName" : "xsm_plasmaswordswooshlight",
+  "image" : "xsm_plasmaswordswoosh.png",
+  "frames" : "xsm_plasmaswordswoosh.png",
+  "animationCycle" : 0.3,
+  "level" : 1,
+  "timeToLive" : 0.3,
+  "frameNumber" : 1,
+  "speed" : 0,
+  "orientationLocked" : true,
+  "animationLoops" : false,
+
+  "pointLight" : false,
+  "lightColor" : [249, 94, 255], 
+  
+  "damageKind" : "default",
+  "power" : 0
+}

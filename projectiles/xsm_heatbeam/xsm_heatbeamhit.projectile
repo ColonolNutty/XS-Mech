@@ -1,0 +1,28 @@
+{
+  "projectileName" : "xsm_heatbeamhit",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_heatbeamsmoke.png",
+  "frames" : "xsm_heatbeamsmoke.png",
+  "animationCycle" : 0.3,
+  "frameNumber" : 12,
+  "timeToLive" : 0.3,
+  "power" : 200,
+  "speed" : 0.1,
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+  ],
+  "statusEffects" : [
+    {
+      "effect" : "glow",
+      "amount" : 100.0,
+      "color" : "orange",
+      "duration" : 5.0
+    },
+    "burning"
+	
+  ],
+  "damagePoly" : [ [-6, -6], [6, -6], [6, 6], [-6, 6] ],
+  "damageKind" : "fire"
+}

@@ -1,0 +1,16 @@
+{
+  "kind" : "xsm_rhomechwarpout",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/xsm_rhomechwarpout/xsm_rhomechwarpout.animation",
+    "position" : [0, 0],
+    "finalVelocity" : [0, 0],
+    "approach" : [0, 50],
+    "size" : 1.0,
+    "timeToLive" : 1.2,
+    "layer" : "front",
+    "variance" : {
+      "initialVelocity" : [0.0, 0.0]
+    }
+  }
+}

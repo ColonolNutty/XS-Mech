@@ -1,0 +1,200 @@
+{
+  "name" : "xsm_elitesigmamech",
+  "boundBox" : [-2.5, -3.75, 2.5, 2.5],
+  "slaveControlTimeout" : 2.0,
+  "slaveControlHeartbeat" : 1.0,
+  "canBeHit" : false,
+
+  "script" : "/vehicles/mech/xsm_sigmamech.lua",
+  "animation" : "xsm_sigmamech.animation",
+
+  "animationCustom" : {
+    "sounds" : {
+      "mechStartupSound" : ["/sfx/objects/apexstatue3_switchon.ogg"],
+      "mechShutdownSound" : ["/sfx/objects/apexconsole2switch.ogg"],
+      "mechFireSound" : ["/sfx/gun/plasma_ar3.ogg"],
+      "mechFireSound2" : ["/sfx/gun/plasma_ar1.ogg"],
+      "mechAltFireSound" : ["/sfx/gun/grenade1.ogg"]
+    },
+  
+    "particleEmitters" : {
+      "mechActivateParticles" : {
+        "particles" : [ ]
+      },
+      "mechDeactivateParticles" : {
+        "particles" : [ ]
+      },
+      "hoverParticles" : {
+        "emissionRate" : 10.0,
+        "particles" : [
+          {
+            "particle" : "xsm_mechhoverdust",
+            "offset" : [0, -4.2]
+          },
+          {
+            "particle" : "xsm_mechhoverdust",
+            "offset" : [0, -4.2]
+          },
+          {
+            "particle" : "xsm_mechhoverdust",
+            "offset" : [-1.5, -4.2]
+          },
+          {
+            "particle" : "xsm_mechhoverdust",
+            "offset" : [-1.5, -4.2]
+          },
+          {
+            "particle" : "xsm_mechhoverlight"
+          }
+        ]
+      },
+      
+      "smoke1" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-1.5, -2, 1.5, 2],
+        "particles" : [{ "particle" : "burningvehiclesmokefront"}]
+      },
+      
+      "smoke2" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-1.5, -2, 1.5, 2],
+        "particles" : [{ "particle" : "shadowsmoke"},{ "particle" : "burningdustfront"}]
+      },
+      
+      "fire1" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-1.5, -2, 1.5, 2],
+        "particles" : [ { "particle" : "burningdust"},
+                        { "particle" : "campfireflames"},
+                        { "particle" : "fireshard"},
+                        { "particle" : "burningvehiclesmokeback"}]
+
+      },
+
+      "fire2" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-1.5, -2, 1.5, 2],
+        "particles" : [ { "particle" : "burningdust"},
+                        { "particle" : "campfireflames"},
+                        { "particle" : "fireshard"},
+                        { "particle" : "burningvehiclesmokeback"}]
+
+      },
+
+      "damageShards" : {
+        "emissionRate" : 0.0,
+        "burstCount"  : 4,
+        "offsetRegion" : [-1.5, -2, 1.5, 2],
+        "particles" : [{ "particle" : "fireshard"}]
+      },
+
+      "wreckage" : {
+        "active" : false,
+        "emissionRate" : 0.0,
+        "burstCount"  : 8,
+        "offsetRegion" : [-1.5, -2, 1.5, 2],
+        "particles" : [
+                       { "particle" : "hoverbikekhakiwreck2"},
+                       { "particle" : "hoverbikewreck3"},
+                       { "particle" : "hoverbikekhakiwreck4"},
+                       { "particle" : "hoverbikewreck5"}]
+      }
+    }
+  },
+  
+  "animationPartTags" : {
+    "backLeg" : {
+      "partImage" : "xsm_elitesigmamechbleg.png"
+    },
+    "background" : {
+      "partImage" : "xsm_elitesigmamechbackground.png"
+    },
+    "backGun" : {
+      "partImage" : "xsm_elitesigmamechgun.png"
+    },
+    "missilepod" : {
+      "partImage" : "xsm_elitesigmamechmissilepod.png"
+    },
+    "torso" : {
+      "partImage" : "xsm_elitesigmamechbody.png"
+    },
+    "frontGun" : {
+      "partImage" : "xsm_elitesigmamechgun.png"
+    },
+    "frontLeg" : {
+      "partImage" : "xsm_elitesigmamechfleg.png"
+    }
+  },
+
+  "movementSettings" : {
+    "collisionPoly" : [ [-1.5, -1.75], [-1.0, -3.75], [1.0, -3.75], [1.5, -1.75], [1.5, 1.0], [1.0, 2.5], [-1.0, 2.5], [-1.5, 1.0] ],
+    "mass" : 5,
+    "airFriction" : 0.5,
+    "groundFriction" : 25.0,
+    "ignorePlatformCollision" : false
+  },
+
+  "loungePositions" : {
+    "seat" : {
+      "part" : "body",
+      "partAnchor" : "sitPosition",
+      "orientation" : "sit",
+      "dance" : "flipswitch",
+      "statusEffects" : ["headlamp","nude","invulnerable","xsm_energyuse"]
+    }
+  },
+
+  "mechHorizontalRunMovement" : 13,
+  "mechHorizontalMovement" : 10,
+  "mechHorizontalBackMovement" : 7,
+  "mechJumpVelocity" : [10, 30],
+  "offGroundFrames" : 8,
+
+  "mechLevel" : 6,
+
+  //health and damage
+
+  "maxHealth" : 1000,
+  "protection" : 50,
+  "materialKind" : "robotic",
+  "healthBarYAdjust" : 0.625,
+  
+  "mechHoverSpeed" : 0.0,
+  "mechHoverTime" : 6.0,
+  
+  "energyCostPerSecond" : 30,
+  "energyCostPerPrimaryShot" : 2.5,
+  "energyCostPerAltShot" : 25,
+  "energyCostPerSecondRunning" : 10,
+  "energyCostPerSecondHovering" : 25,//40,
+  "energyCostPerHover" : 20,
+  
+  // Startup/shutdown
+  "mechStartupTime" : 0.25,
+  "mechShutdownTime" : 0.50,
+
+  "mechTransformPositionChange" : [0.0, 0.75],
+  "parentOffset" : [0.2, 0.8],
+
+  "mechCollisionTest" : [-3.0, -2.0, 3.0, 3.5],
+
+  "mechAimLimit" : 40,
+  "mechGunFireCone" : 5,
+  
+  "mechFireCycle" : 0.06,
+  "mechProjectile" : "xsm_kineticshellplasma",
+  "mechProjectileConfig" : {
+    "power" : 3
+  },
+  "mechTracerProjectile" : "xsm_kineticshellplasma",
+  
+  "mechAltFireCycle" : 4,
+  "mechAltFireShotInterval" : 0.1,
+  "mechAltProjectile" : "xsm_daisybustergrenade",
+  "mechAltProjectileConfig" : {
+    "power" : 15
+  }  
+  
+  
+  
+}

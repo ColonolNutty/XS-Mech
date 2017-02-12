@@ -1,0 +1,10 @@
+{
+  "itemName" : "xsm_elitesigmamech",
+  "rarity" : "Legendary",
+  "inventoryIcon" : "/tech/xsm_elitesigmamech.png",
+  "description" : "Press F. Sigma, luxury edition.",
+  "shortdescription" : "XS S-07 Elite Sigma Mech",
+  "inspectionKind" : "tech",
+
+  "techModule" : "xsm_elitesigmamech"
+}

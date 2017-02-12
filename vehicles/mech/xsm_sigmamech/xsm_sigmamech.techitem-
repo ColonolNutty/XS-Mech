@@ -1,0 +1,10 @@
+{
+  "itemName" : "xsm_sigmamech",
+  "rarity" : "Legendary",
+  "inventoryIcon" : "/tech/xsm_sigmamech.png",
+  "description" : "Press F. The versatile XS Sigma is always a worthy choice!",
+  "shortdescription" : "XS S-01 Sigma Mech",
+  "inspectionKind" : "tech",
+
+  "techModule" : "xsm_sigmamech"
+}

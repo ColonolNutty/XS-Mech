@@ -1,0 +1,34 @@
+{
+  "itemName" : "xsm_sigmamechcontroller",
+  "level" : 1,
+  "price" : 7000,
+  "rarity" : "legendary",
+  "shortdescription" : "XS S-01 Sigma Mech",
+  "description" : "The versatile XS Sigma is always a worthy choice!",
+  "twoHanded" : false,
+  "maxStack" : 1,
+  "itemTags" : ["vehiclecontroller"],
+
+  "animation" : "vehiclecontroller.animation",
+  "scripts" : ["xsm_vehiclecontroller.lua"],
+  "animationScripts" : ["vehiclecursor.lua"],
+  "filled" : true,
+  "category" : "vehicleController",
+  "tooltipKind" : "vehicle",
+  "largeImage" : "xsm_sigmathumb.png",
+
+  "respawnTime" : 1.0,
+
+  //=============Item specifc bits.
+  "vehicleType" : "xsm_sigmamech",
+  "vehicleBoundingBox" : [-3, -3, 3, 3],
+  "vehicleImage" : "/vehicles/mech/xsm_sigmamech/xsm_sigmamechwarp.png:warp.3",
+
+  "animationParts" : {
+    "casing" : "xsm_sigmamech.png"
+  },
+
+  "inventoryIcon" : "xsm_sigmamech.png:full",
+  "emptyInventoryIcon" : "/items/active/vehiclecontroller/xsm_sigmamech.png:empty",
+  "filledInventoryIcon" : "/items/active/vehiclecontroller/xsm_sigmamech.png:full"
+}

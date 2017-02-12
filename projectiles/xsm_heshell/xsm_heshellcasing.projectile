@@ -1,0 +1,16 @@
+{
+  "projectileName" : "xsm_heshellcasing",
+  "physics" : "xsm_heavyprojectile",
+  "bounces" : -1,
+  "level" : 3,
+  "timeToLive" : 1.7,
+  "speed" : 24,
+  "damageKindImage" : "icon.png",
+  "image" : "xsm_heshellcasing.png",
+  "frames" : "xsm_heshellcasing.png",
+  "animationCycle" : 1.7,
+  "frameNumber" : 13,
+  "power" : 0,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

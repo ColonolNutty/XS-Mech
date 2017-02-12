@@ -1,0 +1,10 @@
+{
+  "itemName" : "xsm_piraterhomech",
+  "rarity" : "Legendary",
+  "inventoryIcon" : "/tech/xsm_piraterhomech.png",
+  "description" : "Press F while on the ground. Custom mech of the legendary Captain Q. Flint.",
+  "shortdescription" : "XS R-03C Pirated Rho Mech",
+  "inspectionKind" : "tech",
+
+  "techModule" : "xsm_piraterhomech"
+}

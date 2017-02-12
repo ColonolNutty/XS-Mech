@@ -1,0 +1,19 @@
+{
+  "kind" : "xsm_mechgravsteam",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/dust2/dust2.animation",
+	"initialVelocity" : [0, 3],
+    "finalVelocity" : [0, 5],
+    "approach" : [0, 50],
+    "destructionAction" : "shrink",
+    "destructionTime" : 1.25,
+    "fade" : 1,
+    "size" : 1,
+    "layer" : "back",
+    "timeToLive" : 0.95,
+    "variance" : {
+      "initialVelocity" : [3, 3]
+    }
+  }
+}

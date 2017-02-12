@@ -1,0 +1,1245 @@
+{
+  "sounds" : {
+	"mechStartupSound" : ["/sfx/xsm_NoSound.wav"],
+    "mechShutdownSound" : ["/sfx/tech/mech_powerdown.wav"],
+	"mechBoostChargeSound" : ["/sfx/gun/reload/sniper_reload_clip1.wav"],
+	"mechBoostIgniteSound" : ["/sfx/gun/rocketblast3.wav"],
+	"mechBoostRechargeSound" : ["/sfx/interface/thruster_off.wav"],
+	"mechBoostReadySound" : ["/sfx/interface/nav_computer_on.wav"],
+	"mechFireSound" : ["/sfx/xsm_RailCannonShot.wav"],
+	"mechAltFireSound" : ["/sfx/gun/grenade1.wav"]
+    },
+
+  "animatedParts" : {
+    "stateTypes" : {
+		"arms" : {
+        "default" : "gunFront",
+        "states" : {
+          "gunFront" : {		  
+          },
+		  "gunBack" : {
+		  },
+          "gunFrontFiring" : {
+		    "frames" : 11,
+            "cycle" : 0.5,
+            "mode" : "transition",
+			"transition" : "gunFront",
+            "properties" : {
+              "immediateSound" : "/sfx/gun/rocket_shot.wav"
+            }
+          },
+		  "gunBackFiring" : {
+		    "frames" : 11,
+            "cycle" : 0.5,
+            "mode" : "transition",
+			"transition" : "gunBack",
+            "properties" : {
+              "immediateSound" : "/sfx/gun/rocket_shot.wav"
+            }
+          }
+        }
+      },
+	  
+	  "armsAlt" : {
+        "default" : "gunFront",
+        "states" : {
+          "gunFront" : {		  
+          },
+		  "gunBack" : {
+		  },
+          "gunFrontFiring" : {
+		    "frames" : 12,
+            "cycle" : 0.5,
+            "mode" : "transition",
+			"transition" : "gunFront",
+            "properties" : {
+			  "immediateSound" : "/sfx/tech/tech_dashshort.wav"
+            }
+          },
+		  "gunBackFiring" : {
+		    "frames" : 12,
+            "cycle" : 0.5,
+            "mode" : "transition",
+			"transition" : "gunBack",
+            "properties" : {
+			  "immediateSound" : "/sfx/tech/tech_dashshort.wav"
+            }
+          }
+        }
+      },
+	
+      "frontFiring" : {
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+
+          "off" : { }
+        }
+      },
+
+      "backFiring" : {
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+
+          "off" : { }
+        }
+      },
+	  
+	  "grenadeBox" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+          },
+          "open" : {
+		    "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end",
+            "properties" : {
+              "immediateSound" : "/sfx/objects/metalbox_open.wav"
+            }
+          },
+		  "close" : {
+		    "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "transition",
+			"transition" : "idle",
+            "properties" : {
+            },
+			"frameProperties" : {
+              "immediateSound" : [ "", "/sfx/objects/metalbox_close.wav" ]
+            }
+          }
+        }
+      },
+	  
+	  "boost" : {
+        "default" : "off",
+        "states" : {
+          "off" : { },
+          "charge1" : { },
+		  "charge2" : { },
+		  "charge3" : { },
+		  "charge4" : { },
+		  "fire1" : {
+		    "frames" : 3,
+            "cycle" : 0.20,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ThetaJetpack.wav"
+            }
+		  },
+		  "fire2" : {
+		    "frames" : 3,
+            "cycle" : 0.20,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ThetaJetpack.wav"
+            }
+		  },
+		  "fire3" : {
+		    "frames" : 3,
+            "cycle" : 0.20,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ThetaJetpack.wav"
+            }
+		  },
+		  "fire4" : {
+		    "frames" : 3,
+            "cycle" : 0.20,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ThetaJetpack.wav"
+            }
+		  },
+		  "recharge1" : {
+		    "frames" : 1,
+            "cycle" : 0.07,
+            "mode" : "transition",
+			"transition" : "off",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/mech_powerdown2.wav"
+            }
+          },
+		  "recharge2" : {
+		    "frames" : 2,
+            "cycle" : 0.14,
+            "mode" : "transition",
+			"transition" : "off",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/mech_powerdown2.wav"
+            }
+          },
+		  "recharge3" : {
+		    "frames" : 3,
+            "cycle" : 0.21,
+            "mode" : "transition",
+			"transition" : "off",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/mech_powerdown2.wav"
+            }
+          },
+		  "recharge4" : {
+		    "frames" : 4,
+            "cycle" : 0.28,
+            "mode" : "transition",
+			"transition" : "off",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/mech_powerdown2.wav"
+            }
+          }
+        }
+      },
+	
+      "emergencyJets" : {
+        "states" : {
+          "on" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+            "mode" : "loop",
+			"properties" : {
+              "persistentSound" : "/sfx/tech/tech_jetpack.wav"
+            }
+          },
+          "off" : { }
+        }
+      },
+	  
+      "movement" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+            "properties" : {
+              "immediateSound" : ""  // "/sfx/tech/mech_jump3.wav"
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [0, 0.5], [0, 0.5], [0, 0.375], [0, 0.375] ]
+            }
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.35,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, 0.25], [0, 0.25], [0, 0.125], [0, 0] ]
+            }
+          },
+		  
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "transition",
+			"transition" : "idle",
+			"properties" : {
+              "immediateSound" : "/sfx/tech/mech_step.wav"
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [0, -0.25], [0, 0] ]
+            }
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "transition",
+			"transition" : "idle",
+			"properties" : {
+              "immediateSound" : "/sfx/tech/mech_step.wav"
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [0, -1.0], [0, -0.75], [0, -0.5], [0, -0.25] ]
+            }
+          },
+		  
+		  "stand" : {
+            "frames" : 4,
+            "cycle" : 0.75,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, -1.5], [0, -1.125], [0, -0.75], [0, -0.375] ]
+            }
+          },
+		  
+		  "sit" : {
+            "frames" : 4,
+            "cycle" : 0.75,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, -0.375], [0, -0.75], [0, -1.125], [0, -1.5] ]
+            }
+          },
+
+          "walk" : {
+            "frames" : 12,
+            "cycle" : 0.79,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/tech/mech_step.wav", "", "", "", "", "", "/sfx/tech/mech_step2.wav", "", "", "", "", "" ],
+              "stateNudge" : [ [0, -0.5], [0, 0], [0, 0.5], [0, 0.5], [0, 0], [0, -0.5], [0, -0.5], [0, 0], [0, 0.5], [0, 0.5], [0, 0], [0, -0.5] ]
+            }
+          },
+
+          "backWalk" : {
+            "frames" : 12,
+            "cycle" : 0.79,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/tech/mech_step.wav", "", "", "", "", "", "/sfx/tech/mech_step2.wav", "", "", "", "", "" ],
+              "stateNudge" : [ [0, -0.5], [0, 0], [0, 0.5], [0, 0.5], [0, 0], [0, -0.5], [0, -0.5], [0, 0], [0, 0.5], [0, 0.5], [0, 0], [0, -0.5] ]
+            }
+          }
+        }
+      },
+	  
+      "torso" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.35,
+            "mode" : "end"
+          },
+		  
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "transition",
+			"transition" : "idle"
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "transition",
+			"transition" : "idle"
+          },
+		  
+		  "turnOn" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "end",
+			"frameProperties" : {
+              "immediateSound" : [ "/sfx/objects/apexcooldoor_close.wav", "", "", "", "", "/sfx/objects/apexstatue3_switchon.wav", "", "/sfx/objects/apexconsole1on.wav" ]
+            }
+          },
+		  
+		  "turnOff" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "end",
+			"frameProperties" : {
+              "immediateSound" : [ "/sfx/objects/apexcooldoor_open.wav", "", "", "", "", "/sfx/objects/apexstatue3_switchon.wav", "", "" ]
+            }	
+          },
+
+          "walk" : {
+            "frames" : 12,
+            "cycle" : 0.79,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 12,
+            "cycle" : 0.79,
+            "mode" : "loop"
+          }
+        }
+      }
+    },
+	
+	
+	
+    "parts" : {
+	
+	  "emergencyJetFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 0,
+		  "back" : true,
+          "offset" : [0, -8.25]
+        },
+
+        "partStates" : {
+          "emergencyJets" : {
+            "on" : {
+              "properties" : {
+                "image" : "xsm_thetamechemergencyjets.png:hover.<frameIndex>"
+              }
+            },
+			"off" : {
+              "properties" : {
+              }
+            }
+          }
+        }
+      },
+
+	  "backGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 0,
+		  "back" : true,
+          "offset" : [10, 3],
+          "rotationGroup" : "guns",
+          "rotationCenter" : [2.25, 3]
+        },
+
+        "partStates" : {
+          "backFiring" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_thetarailmuzzle.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+
+      "backGun" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+          "rotationGroup" : "guns",
+		  "back" : true,
+          "offset" : [5, 3],
+          "rotationCenter" : [2.25, 3],
+          "relativeAnchors" : {
+            "backGunFirePoint" : [6,0]
+          }
+        },
+
+        "partStates" : {		
+		  "arms" : {
+		    "gunFront" : {
+			  "properties" : {
+			  }
+			},			
+			"gunBack" : {
+			  "properties" : {
+			    "image" : "xsm_thetamechgun.png:rotation"
+			  }
+			},			
+			"gunFrontFiring" : {
+			  "properties" : {
+			  }
+			},	
+			"gunBackFiring" : {
+			  "properties" : {
+				"image" : "xsm_thetamechgun.png:fire.<frame>"
+			  }
+			}
+		  }
+        }
+      },
+	  
+      "backGunBox" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+		  "back" : true,
+          "offset" : [6, 3]
+        },
+
+        "partStates" : {		
+		  "armsAlt" : {
+		    "gunFront" : {
+			  "properties" : {
+			    "image" : "xsm_thetamechbox.png:rotation"
+			  }
+			},			
+			"gunBack" : {
+			  "properties" : {
+			  }
+			},			
+			"gunFrontFiring" : {
+			  "properties" : {
+				"image" : "xsm_thetamechbox.png:fire.<frame>"
+			  }
+			},	
+			"gunBackFiring" : {
+			  "properties" : {
+			  }
+			}
+		  }
+        }
+      },
+	
+      "backLeg" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1.5,
+          "back" : true,
+		  "relativeAnchors" : {
+            "backLegFoot" : [2, -7.5]
+          }
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_thetamechbleg.png:idle"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_thetamechbleg.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.5], [0, -0.5], [0, -0.375], [0, -0.375] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_thetamechbleg.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0.125, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_thetamechbleg.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_thetamechbleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.0], [0, 0.75], [0, 0.5], [0, 0.25] ]
+              }
+            },
+			"stand" : {
+              "properties" : {
+                "image" : "xsm_thetamechbleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.5], [0, 1.125], [0, 0.75], [0, 0.375] ]
+              }
+            },
+			"sit" : {
+              "properties" : {
+                "image" : "xsm_thetamechbleg.png:sit.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.75], [0, 1.125], [0, 1.5] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_thetamechbleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+			    "offset" : [ [0, 0.5], [0, 0], [0, -0.5], [0, -0.5], [0, 0], [0, 0.5], [0, 0.5], [0, 0], [0, -0.5], [0, -0.5], [0, 0], [0, 0.5] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_thetamechbleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+			    "offset" : [ [0, 0.5], [0, 0], [0, -0.5], [0, -0.5], [0, 0], [0, 0.5], [0, 0.5], [0, 0], [0, -0.5], [0, -0.5], [0, 0], [0, 0.5] ]
+              }
+            }
+          }
+        }
+      },
+	  
+      "backJet" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2,
+		  "back" : true
+        },
+
+        "partStates" : {
+          "boost" : {
+            "off" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:idle"
+              }
+            },
+            "charge1" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:charge.1"
+              },
+              "frameProperties" : {
+              }
+            },
+            "charge2" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:charge.2"
+              },
+              "frameProperties" : {
+              }
+            },
+            "charge3" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:charge.3"
+              },
+              "frameProperties" : {
+              }
+            },
+            "charge4" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:charge.4"
+              },
+              "frameProperties" : {
+              }
+            },
+            "fire1" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:fire1.<frame>"
+              },	  
+			  "frameProperties" : {
+              "offset" : [ [0, 0.1], [0.1, 0], [0, -0.1] ]
+              }
+            },
+            "fire2" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:fire2.<frame>"
+              },
+              "frameProperties" : {
+              "offset" : [ [0, 0.1], [0.1, 0], [0, -0.1] ]
+              }
+            },
+            "fire3" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:fire3.<frame>"
+              },
+              "frameProperties" : {
+              "offset" : [ [0, 0.1], [0.1, 0], [0, -0.1] ]
+              }
+            },
+            "fire4" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:fire4.<frame>"
+              },
+              "frameProperties" : {
+              "offset" : [ [0, 0.1], [0.1, 0], [0, -0.1] ]
+              }
+            },
+            "recharge1" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:bcharge1.<frame>"
+              },
+              "frameProperties" : {
+              }
+            },
+			"recharge2" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:bcharge2.<frame>"
+              },
+              "frameProperties" : {
+              }
+            },
+			"recharge3" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:bcharge3.<frame>"
+              },
+              "frameProperties" : {
+              }
+            },
+			"recharge4" : {
+              "properties" : {
+                "image" : "xsm_thetamechbjet.png:bcharge4.<frame>"
+              },
+              "frameProperties" : {
+              }
+            }
+          }
+        }
+      },
+
+	  "backGrenadeBox" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2.5,
+		  "back" : true,
+		  "relativeAnchors" : {
+            "grenadeBoxFirePoint1" : [3.25, 0.5]
+          }
+        },
+
+        "partStates" : {		
+		  "grenadeBox" : {
+		    "idle" : {
+			  "properties" : {
+			    "image" : "xsm_thetamechbnade.png:idle"
+			  }
+			},			
+			"open" : {
+			  "properties" : {
+			    "image" : "xsm_thetamechbnade.png:open.<frame>"
+			  }
+			},			
+			"close" : {
+			  "properties" : {
+				"image" : "xsm_thetamechbnade.png:close.<frame>"
+			  }
+			}
+		  }
+        }
+      },	  
+	  
+      "body" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3
+        },
+
+        "partStates" : {
+          "torso" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_thetamechbody.png:idle"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_thetamechbody.png:idle"
+              },
+              "frameProperties" : {
+			    "offset" : [ [0, -0.5], [0, -0.5], [0, -0.375], [0, -0.375] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_thetamechbody.png:idle"
+              },
+              "frameProperties" : {
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_thetamechbody.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.2], [0, -0.1] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_thetamechbody.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.4], [0, -0.3], [0, -0.2], [0, -0.1] ]
+              }
+            },
+			"turnOff" : {
+              "properties" : {
+                "image" : "xsm_thetamechbody.png:turnOff.<frame>"
+              }
+            },
+			"turnOn" : {
+              "properties" : {
+                "image" : "xsm_thetamechbody.png:turnOn.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_thetamechbody.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0.07, 0], [0, 0.125], [-0.07, 0.25], [0, 0.25], [0.07, 0.125], [0, 0], [-0.07, 0], [0, 0.125], [0.07, 0.25], [0, 0.25], [-0.07, 0.125], [0, 0] ]		  
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_thetamechbody.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+			    "offset" : [ [0.07, 0], [0, 0.125], [-0.07, 0.25], [0, 0.25], [0.07, 0.125], [0, 0], [-0.07, 0], [0, 0.125], [0.07, 0.25], [0, 0.25], [-0.07, 0.125], [0, 0] ]		  
+              }
+            }
+          }
+        }
+      },
+	  
+      "frontJet" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3.5
+        },
+
+        "partStates" : {
+          "boost" : {
+            "off" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:idle"
+              }
+            },
+            "charge1" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:charge.1"
+              },
+              "frameProperties" : {
+              }
+            },
+            "charge2" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:charge.2"
+              },
+              "frameProperties" : {
+              }
+            },
+            "charge3" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:charge.3"
+              },
+              "frameProperties" : {
+              }
+            },
+            "charge4" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:charge.4"
+              },
+              "frameProperties" : {
+              }
+            },
+            "fire1" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:fire1.<frame>"
+              },
+              "frameProperties" : {
+              "offset" : [ [0, 0.1], [0.1, 0], [0, -0.1] ]
+              }
+            },
+            "fire2" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:fire2.<frame>"
+              },
+              "frameProperties" : {
+              "offset" : [ [0, 0.1], [0.1, 0], [0, -0.1] ]
+              }
+            },
+            "fire3" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:fire3.<frame>"
+              },
+              "frameProperties" : {
+              "offset" : [ [0, 0.1], [0.1, 0], [0, -0.1] ]
+              }
+            },
+            "fire4" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:fire4.<frame>"
+              },
+              "frameProperties" : {
+              "offset" : [ [0, 0.1], [0.1, 0], [0, -0.1] ]
+              }
+            },
+            "recharge1" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:bcharge1.<frame>"
+              },
+              "frameProperties" : {
+              }
+            },
+			"recharge2" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:bcharge2.<frame>"
+              },
+              "frameProperties" : {
+              }
+            },
+			"recharge3" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:bcharge3.<frame>"
+              },
+              "frameProperties" : {
+              }
+            },
+			"recharge4" : {
+              "properties" : {
+                "image" : "xsm_thetamechfjet.png:bcharge4.<frame>"
+              },
+              "frameProperties" : {
+              }
+            }
+          }
+        }
+      },
+	  
+	  "frontGrenadeBox" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 4,
+		  "relativeAnchors" : {
+            "grenadeBoxFirePoint2" : [0.25, 0.5]
+          }
+        },
+
+        "partStates" : {		
+		  "grenadeBox" : {
+		    "idle" : {
+			  "properties" : {
+			    "image" : "xsm_thetamechfnade.png:idle"
+			  }
+			},			
+			"open" : {
+			  "properties" : {
+			    "image" : "xsm_thetamechfnade.png:open.<frame>"
+			  }
+			},			
+			"close" : {
+			  "properties" : {
+				"image" : "xsm_thetamechfnade.png:close.<frame>"
+			  }
+			}
+		  }
+        }
+      },
+
+      "frontLeg" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 5,
+		  "relativeAnchors" : {
+            "frontLegFoot" : [-1, -7.5]
+          }
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_thetamechfleg.png:idle"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_thetamechfleg.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.5], [0, -0.5], [0, -0.375], [0, -0.375] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_thetamechfleg.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0.125, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_thetamechfleg.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_thetamechfleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.0], [0, 0.75], [0, 0.5], [0, 0.25] ]
+              }
+            },
+			"stand" : {
+              "properties" : {
+                "image" : "xsm_thetamechfleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.5], [0, 1.125], [0, 0.75], [0, 0.375] ]
+              }
+            },
+			"sit" : {
+              "properties" : {
+                "image" : "xsm_thetamechfleg.png:sit.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.75], [0, 1.125], [0, 1.5] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_thetamechfleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+			    "offset" : [ [0, 0.5], [0, 0], [0, -0.5], [0, -0.5], [0, 0], [0, 0.5], [0, 0.5], [0, 0], [0, -0.5], [0, -0.5], [0, 0], [0, 0.5] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_thetamechfleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+			    "offset" : [ [0, 0.5], [0, 0], [0, -0.5], [0, -0.5], [0, 0], [0, 0.5], [0, 0.5], [0, 0], [0, -0.5], [0, -0.5], [0, 0], [0, 0.5] ]
+              }
+            }
+          }
+        }
+      },
+	  
+	  "frontGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 5.5,
+          "offset" : [5, 3],
+          "rotationGroup" : "guns",
+          "rotationCenter" : [-3.75, 3]
+        },
+
+        "partStates" : {
+          "frontFiring" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_thetarailmuzzle.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+
+      "frontGun" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 6,
+          "rotationGroup" : "guns",
+          "offset" : [0, 3],
+          "rotationCenter" : [-3.75, 3],
+          "relativeAnchors" : {
+            "frontGunFirePoint" : [6,0]
+          }
+        },
+
+        "partStates" : {		
+		  "arms" : {
+		    "gunFront" : {
+			  "properties" : {
+			    "image" : "xsm_thetamechgun.png:rotation"
+			  }
+			},			
+			"gunBack" : {
+			  "properties" : {
+			  }
+			},			
+			"gunFrontFiring" : {
+			  "properties" : {
+				"image" : "xsm_thetamechgun.png:fire.<frame>"
+			  }
+			},	
+			"gunBackFiring" : {
+			  "properties" : {
+			  }
+			}
+		  }
+        }
+      },
+
+	  "frontGunBox" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 6,
+          "offset" : [-0.5, 3]
+        },
+
+        "partStates" : {		
+		  "armsAlt" : {
+		    "gunFront" : {
+			  "properties" : {
+			  }
+			},			
+			"gunBack" : {
+			  "properties" : {
+			    "image" : "xsm_thetamechbox.png:rotation"
+			  }
+			},			
+			"gunFrontFiring" : {
+			  "properties" : {
+			  }
+			},	
+			"gunBackFiring" : {
+			  "properties" : {
+				"image" : "xsm_thetamechbox.png:fire.<frame>"
+			  }
+			}
+		  }
+        }
+      }	 	  
+    }
+  },
+
+  "rotationGroups" : {
+    "guns" : {
+      "angularVelocity" : 10.0
+    }
+  },
+  
+  "particleEmitters" : {
+    "mechActivateParticles" : {
+      "particles" : [ ]
+    },
+    "mechDeactivateParticles" : {
+      "particles" : [ ]
+    },
+	"hardLandingParticles" : {
+      "particles" : [
+        {
+          "particle" : "xsm_thetamechstepdustback",
+          "offset" : [1.5, -7]
+        },
+        {
+          "particle" : "xsm_thetamechstepdust",
+          "offset" : [-2.25, -7]
+        }	  
+	  ]
+    },
+	"veryHardLandingParticles" : {
+      "particles" : [
+        {
+          "particle" : "xsm_thetamechstepdustback",
+          "offset" : [1.5, -6.5]
+        },
+        {
+          "particle" : "xsm_thetamechstepdust",
+          "offset" : [-2.25, -6.5]
+        },
+        {
+          "particle" : "xsm_mechlandingdust",
+          "offset" : [-2.25, -6.25]
+        },
+        {
+          "particle" : "xsm_mechlandingdust",
+          "offset" : [1.5, -6.25]
+        }		
+	  ]
+    },
+	"emergencyBoostParticles" : {
+      "emissionRate" : 25.0,
+      "particles" : [
+        {
+          "particle" : "xsm_thetaemergencyboosteflame",
+		  "offset" : [0, -6]
+        },
+        {
+          "particle" : "xsm_thetaemergencyboosteflame",
+		  "offset" : [3, -6]
+        },
+        {
+          "particle" : "xsm_thetaemergencyboostersmoke",
+		  "offset" : [0, -6]
+        },
+        {
+          "particle" : "xsm_thetaemergencyboostersmoke",
+		  "offset" : [3, -6]
+        }
+      ]
+    },
+	"boostParticles1" : {
+      "emissionRate" : 25.0,
+      "particles" : [
+        {
+          "particle" : "xsm_thetaboosterflame1",
+		  "offset" : [-3, 3]
+        },
+        {
+          "particle" : "xsm_thetaboosterflame1",
+		  "offset" : [-1, 3]
+        },
+        {
+          "particle" : "xsm_thetaboostersmoke1",
+		  "offset" : [-3, 3]
+        },
+        {
+          "particle" : "xsm_thetaboostersmoke1",
+		  "offset" : [-1, 3]
+        }
+      ]
+    },
+	"boostParticles2" : {
+      "emissionRate" : 50.0,
+      "particles" : [
+        {
+          "particle" : "xsm_thetaboosterflame2",
+		  "offset" : [-2.5, 2]
+        },
+        {
+          "particle" : "xsm_thetaboosterflame2",
+		  "offset" : [-0.5, 2]
+        },
+        {
+          "particle" : "xsm_thetaboostersmoke2",
+		  "offset" : [-2.5, 2]
+        },
+        {
+          "particle" : "xsm_thetaboostersmoke2",
+		  "offset" : [-0.5, 2]
+        }
+      ]
+    },
+	"boostParticles3" : {
+      "emissionRate" : 75.0,
+      "particles" : [
+        {
+          "particle" : "xsm_thetaboosterflame3",
+		  "offset" : [-2.5, 1.5]
+        },
+        {
+          "particle" : "xsm_thetaboosterflame3",
+		  "offset" : [-0.5, 1.5]
+        },
+        {
+          "particle" : "xsm_thetaboostersmoke3",
+		  "offset" : [-2.5, 1.5]
+        },
+        {
+          "particle" : "xsm_thetaboostersmoke3",
+		  "offset" : [-0.5, 1.5]
+        }
+      ]
+    },
+    "boostParticles4" : {
+      "emissionRate" : 100.0,
+      "particles" : [
+        {
+          "particle" : "xsm_thetaboosterflame4",
+		  "offset" : [-2.5, 1]
+        },
+        {
+          "particle" : "xsm_thetaboosterflame4",
+		  "offset" : [-0.5, 1]
+        },
+        {
+          "particle" : "xsm_thetaboostersmoke4",
+		  "offset" : [-2.5, 1]
+        },
+        {
+          "particle" : "xsm_thetaboostersmoke4",
+		  "offset" : [-0.5, 1]
+        }
+      ]
+    }
+  }
+}

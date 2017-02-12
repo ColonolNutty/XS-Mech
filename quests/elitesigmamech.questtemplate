@@ -1,0 +1,23 @@
+  {
+  "id" : "elitesigmamech.gearup",
+  "prerequisites" : [ ],
+  "title" : "^orange;Unlock Elite Sigma Mech",
+  "text" : "Unlocking of the Elite Sigma Mech.",
+  "completionText" : "Elite Sigma Mech has been unlocked.",
+  "speaker" : "player",
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+    "gatherRequirements" : {
+      "items" : {
+        "xsm_elitesigmamechcontroller" : {
+          "count" : 1,
+          "consume" : false
+        }
+      }
+    }
+  }
+}

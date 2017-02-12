@@ -1,0 +1,15 @@
+{
+  "frameGrid" : {
+    "size" : [100, 100],
+    "dimensions" : [15, 3],
+
+    "names" : [
+      [ "fArmIdle", "fArmRecoil.1", "fArmRecoil.2", "fArmRecoil.3", null, "fArmAltIdle", "fArmAltRecoil.1", "fArmAltRecoil.2", "fArmAltRecoil.3" ],
+      [ "bArmIdle", "bArmRecoil.1", "bArmRecoil.2", "bArmRecoil.3", null, "bArmAltIdle", "bArmAltRecoil.1", "bArmAltRecoil.2", "bArmAltRecoil.3", null, "bArmHandIdle", "bArmHandRecoil.1", "bArmHandRecoil.2", "bArmHandRecoil.3" ],
+	  [ "gunIdle", "gunFire.1", "gunFire.2", "gunFire.3" ]
+    ]
+  },
+
+  "aliases" : {
+  }
+}

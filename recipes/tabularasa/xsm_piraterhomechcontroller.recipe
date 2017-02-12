@@ -1,0 +1,10 @@
+{
+  "input" : [
+    { "item" : "money", "count" : 20700 }
+  ],
+  "output" : {
+    "item" : "xsm_piraterhomechcontroller",
+    "count" : 1
+  },
+  "groups" : [ "xs_m", "mod", "all", "tools" ]
+}

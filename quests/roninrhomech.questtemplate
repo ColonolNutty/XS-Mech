@@ -1,0 +1,23 @@
+  {
+  "id" : "roninrhomech.gearup",
+  "prerequisites" : [ ],
+  "title" : "^orange;Unlock Rho Mech",
+  "text" : "Unlocking of the Ronin Rho Mech.",
+  "completionText" : "Ronin Rho Mech has been unlocked.",
+  "speaker" : "player",
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+    "gatherRequirements" : {
+      "items" : {
+        "xsm_roninrhomechcontroller" : {
+          "count" : 1,
+          "consume" : false
+        }
+      }
+    }
+  }
+}

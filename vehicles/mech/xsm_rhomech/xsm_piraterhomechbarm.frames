@@ -1,0 +1,47 @@
+{
+  "frameGrid" : {
+    "size" : [100, 100],
+    "dimensions" : [15, 3],
+
+    "names" : [
+      [ null, "idle", null, "jump.1", "jump.2", "jump.3", "jump.4", "fall.1", "fall.2", "fall.3", "fall.4", "landh.1", "landh.2", "landh.3", "landh.4" ],
+      [ null, "move.1", "move.2", "move.3", "move.4", "move.5", null, "idleMelee1", "idleMelee2", "windupMelee1", "windupMelee2", "winddownMelee" ],
+	  [ null, "gravOn.3", "gravOn.4", "gravOn.5", "gravOn.6", "gravOn.7", "gravOn.8", "gravFire.1", "gravFire.2", "gravFire.3", "gravFire.4" ]
+    ]
+  },
+
+  "aliases" : {
+	"move.6" : "move.5",
+	"move.7" : "move.4",
+	"move.8" : "move.3",
+	"move.9" : "move.2",
+	"move.10" : "move.1",
+	
+	"bmove.1" : "move.1",
+	"bmove.2" : "move.2",
+	"bmove.3" : "move.3",
+	"bmove.4" : "move.4",
+	"bmove.5" : "move.5",
+	"bmove.6" : "move.5",
+	"bmove.7" : "move.4",
+	"bmove.8" : "move.3",
+	"bmove.9" : "move.2",
+	"bmove.10" : "move.1",
+	
+	"land.1" : "landh.3",
+	"land.2" : "landh.4",
+	
+	"gravOn.1" : "fall.3",
+	"gravOn.2" : "fall.4",
+	
+	"gravOff.1" : "gravOn.8",
+	"gravOff.2" : "gravOn.7",
+	"gravOff.3" : "gravOn.6",
+	"gravOff.4" : "gravOn.5",
+	"gravOff.5" : "gravOn.4",
+	"gravOff.6" : "gravOn.3",
+	"gravOff.7" : "fall.4",
+	"gravOff.8" : "fall.3"
+
+  }
+}

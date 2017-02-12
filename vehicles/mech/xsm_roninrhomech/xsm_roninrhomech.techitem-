@@ -1,0 +1,10 @@
+{
+  "itemName" : "xsm_roninrhomech",
+  "rarity" : "Legendary",
+  "inventoryIcon" : "/tech/xsm_roninrhomech.png",
+  "description" : "Press F while on the ground. For when enemies need melting.",
+  "shortdescription" : "XS R-11 Ronin Rho Mech",
+  "inspectionKind" : "tech",
+
+  "techModule" : "xsm_roninrhomech"
+}

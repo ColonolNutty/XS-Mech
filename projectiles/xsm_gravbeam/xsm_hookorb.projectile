@@ -1,0 +1,15 @@
+{
+  "projectileName" : "xsm_hookorb",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_invis.png",
+  "frames" : "xsm_invis.png",
+  "timeToLive" : 0.03,
+  "power" : 0,
+  "speed" : 0.01,
+  "lightColor" : [232, 163, 116],
+  "piercing" : true,
+  "supportsProcessing" : true,
+  "damageKind" : "default"
+}

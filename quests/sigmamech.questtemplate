@@ -1,0 +1,23 @@
+  {
+  "id" : "sigmamech.gearup",
+  "prerequisites" : [ ],
+  "title" : "^orange;Unlock Sigma Mech",
+  "text" : "Unlocking of the Sigma Mech.",
+  "completionText" : "Sigma Mech has been unlocked.",
+  "speaker" : "player",
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+    "gatherRequirements" : {
+      "items" : {
+        "xsm_sigmamechcontroller" : {
+          "count" : 1,
+          "consume" : false
+        }
+      }
+    }
+  }
+}

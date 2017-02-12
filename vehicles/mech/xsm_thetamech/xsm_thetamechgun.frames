@@ -1,0 +1,14 @@
+{
+  "frameGrid" : {
+    "size" : [128, 128],
+    "dimensions" : [15, 2],
+
+    "names" : [
+      [ null, "rotation", null, "fire.1", "fire.2", "fire.3", "fire.4", "fire.5", "fire.6", "fire.7", "fire.8", "fire.9", "fire.10", "fire.11"],
+      [ null ]
+    ]
+  },
+
+  "aliases" : {
+  }
+}

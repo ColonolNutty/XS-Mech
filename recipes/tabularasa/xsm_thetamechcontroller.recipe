@@ -1,0 +1,10 @@
+{
+  "input" : [
+    { "item" : "money", "count" : 28080 }
+  ],
+  "output" : {
+    "item" : "xsm_thetamechcontroller",
+    "count" : 1
+  },
+  "groups" : [ "xs_m", "mod", "all", "tools" ]
+}

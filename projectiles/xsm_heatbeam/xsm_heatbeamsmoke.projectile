@@ -1,0 +1,17 @@
+{
+  "projectileName" : "xsm_heatbeamsmoke",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_heatbeamsmoke.png",
+  "frames" : "xsm_heatbeamsmoke.png",
+  "animationCycle" : 0.3,
+  "frameNumber" : 12,
+  "timeToLive" : 0.3,
+  "power" : 0,
+  "speed" : 0,
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+  ],
+  "damageKind" : "default"
+}

@@ -1,0 +1,623 @@
+{
+  "sounds" : {
+    "mechStartupSound" : ["/sfx/objects/apexstatue3_switchon.wav"],
+	"mechShutdownSound" : ["/sfx/objects/apexconsole2switch.wav"],
+    "mechFireSound" : ["/sfx/gun/plasma_ar3.wav"],
+    "mechFireSound2" : ["/sfx/gun/plasma_ar1.wav"],
+    "mechAltFireSound" : ["/sfx/gun/grenade1.wav"]
+    },
+
+  "animatedParts" : {
+    "stateTypes" : {
+	
+	   "hovering" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+          },
+          "on" : {
+		    "frames" : 4,
+            "cycle" : 0.25,
+            "mode" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/tech/tech_jetpack.wav"
+            }
+          }
+        }
+      },
+	
+	
+      "movement" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+            "properties" : {
+              "immediateSound" : "/sfx/tech/mech_jump3.wav"
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [0, 0.5], [0, 0.5], [0, 0.375], [0, 0.375] ]
+            }
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, 0.25], [0, 0.25], [0, 0.125], [0, 0] ]
+            }
+          },
+		  
+          "stand" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, -0.5], [0, -0.25] ]
+            }
+          },
+		  
+          "sit" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, -0.25], [0, -0.5] ]
+            }
+          },
+
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.4,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.wav", "", "", "", "", "/sfx/xsm_MechStepLight2.wav", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.4,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.wav", "", "", "", "", "/sfx/xsm_MechStepLight2.wav", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          }
+        }
+      },
+	  
+	  "torso" : {
+	    "default" : "idle",
+		"states" : {
+		  "turnOff" : {
+            "frames" : 6,
+            "cycle" : 0.25,
+            "mode" : "end"  
+		  },
+		  "turnOn" : {
+            "frames" : 6,
+            "cycle" : 0.25,
+            "mode" : "end"		  
+		  },
+		  "idle" : {  }
+		}
+	  },
+
+      "frontFiring" : {
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+
+          "off" : { }
+        }
+      },
+
+      "backFiring" : {
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+
+          "off" : { }
+        }
+      },
+	  
+      "frontRecoil" : {
+        "states" : {
+          "fire" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+
+          "off" : { }
+        }
+      },
+
+      "backRecoil" : {
+        "states" : {
+          "fire" : {
+            "frames" : 4,
+            "cycle" : 0.15,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+
+          "off" : { }
+        }
+      },
+	  
+      "missilePodRecoil" : {
+        "states" : {
+          "fire1" : { },
+          "fire2" : { },
+          "fire3" : { },
+          "fire4" : { },
+          "reload" : {
+            "frames" : 4,
+            "cycle" : 1.0,
+            "mode" : "transition",
+			"transition" : "charge"
+          },			  
+		  "charge" : { },
+          "off" : { }
+        }
+      }
+    },
+	
+	
+	
+    "parts" : {
+	
+	  "backGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 0,
+		  "back" : true,
+          "offset" : [4.3, -1.6],
+          "rotationGroup" : "guns",
+          "rotationCenter" : [0.75, 0.5]
+        },
+
+        "partStates" : {
+          "backFiring" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_bulletmuzzle1.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+
+      "backGun" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+          "rotationGroup" : "guns",
+		  "back" : true,
+          "offset" : [0.5, 0.5],
+          "rotationCenter" : [0.75, 0.5],
+          "relativeAnchors" : {
+            "backGunFirePoint" : [4.5, -2.0]
+          }
+        },
+
+        "partStates" : {		
+		  "backRecoil" : {
+			"fire" : {
+			  "properties" : {
+				"image" : "xsm_elitesigmamechgun.png:bfire.<frameIndex>"
+			  }
+			},
+			"off" : {
+			  "properties" : {
+			    "image" : "xsm_elitesigmamechgun.png:rotation"
+			  }
+			}
+		  }
+        }
+      }, 
+	
+	  "hoveringBoostFlameBack" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1.5,
+          "back" : true,
+          "offset" : [0.0, -4.5]
+        },
+
+        "partStates" : {
+          "hovering" : {
+            "on" : {
+              "properties" : {
+                "image" : "xsm_sigmaboostflame.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+	
+	
+      "backLeg" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2,
+          "back" : true
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbleg.png:idle"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbleg.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.5], [0, -0.5], [0, -0.375], [0, -0.375] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbleg.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+            "stand" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbleg.png:idle"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.5], [0, 0.25] ]
+              }
+            },
+            "sit" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbleg.png:idle"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0.5] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            }
+          }
+        }
+      },
+
+      "missilepod" : {	  
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2,
+          "back" : true,
+          "relativeAnchors" : {
+            "missilePodFirePoint1" : [-1.0, 2.9],
+			"missilePodFirePoint2" : [-0.5, 2.9],
+			"missilePodFirePoint3" : [0.0, 2.9],
+			"missilePodFirePoint4" : [0.5, 2.9]
+          }
+        },
+
+        "partStates" : {		
+		  "missilePodRecoil" : {
+			"fire1" : {
+			  "properties" : {
+				"image" : "xsm_elitesigmamechmissilepod.png:fire1"
+			  }
+			},
+			"fire2" : {
+			  "properties" : {
+				"image" : "xsm_elitesigmamechmissilepod.png:fire2"
+			  }
+			},			
+			"fire3" : {
+			  "properties" : {
+				"image" : "xsm_elitesigmamechmissilepod.png:fire3"
+			  }
+			},			
+			"fire4" : {
+			  "properties" : {
+				"image" : "xsm_elitesigmamechmissilepod.png:fire4"
+			  }
+			},			
+			"reload" : {
+			  "properties" : {
+			    "image" : "xsm_elitesigmamechmissilepod.png:reload.<frameIndex>"
+			  }
+			},
+			"charge" : {
+			  "properties" : {
+			    "image" : "xsm_elitesigmamechmissilepod.png:charge"
+			  }
+			},			
+			"off" : {
+			  "properties" : {
+			    "image" : "xsm_elitesigmamechmissilepod.png:idle"
+			  }
+			}
+		  }
+        }
+      },
+	  
+      "background" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2.5,
+          "back" : true
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbackground.png:idle"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbackground.png:idle"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbackground.png:idle"
+              }
+            },
+            "stand" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbackground.png:idle"
+              }
+            },
+            "sit" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbackground.png:idle"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbackground.png:idle"
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbackground.png:idle"
+              }
+            }
+          }
+        }
+      },
+
+      "body" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3
+        },
+
+        "partStates" : {
+          "torso" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbody.png:idle"
+              }
+            },
+            "turnOn" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbody.png:turnOn.<frame>"
+              }
+            },
+            "turnOff" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechbody.png:turnOff.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+	  "hoveringBoostFlameFront" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3.5,
+          "offset" : [-1.5, -4.5]
+        },
+
+        "partStates" : {
+          "hovering" : {
+            "on" : {
+              "properties" : {
+                "image" : "xsm_sigmaboostflame.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+
+      "frontLeg" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 4
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechfleg.png:idle"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechfleg.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.5], [0, -0.5], [0, -0.375], [0, -0.375] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechfleg.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+            "stand" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechfleg.png:idle"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.5], [0, 0.25] ]
+              }
+            },
+            "sit" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechfleg.png:idle"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0.5] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechfleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_elitesigmamechfleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            }
+          }
+        }
+      },
+	  
+	  "frontGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 4.5,
+          "offset" : [2.2, -1.6],
+          "rotationGroup" : "guns",
+          "rotationCenter" : [-1.25, 0.5]
+        },
+
+        "partStates" : {
+          "frontFiring" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_bulletmuzzle1.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+
+      "frontGun" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 5,
+          "rotationGroup" : "guns",
+          "offset" : [-1.5, 0.5],
+          "rotationCenter" : [-1.25, 0.5],
+          "relativeAnchors" : {
+            "frontGunFirePoint" : [2.5, -2.0]
+          }
+        },
+
+        "partStates" : {		
+		  "frontRecoil" : {
+			"fire" : {
+			  "properties" : {
+				"image" : "xsm_elitesigmamechgun.png:fire.<frameIndex>"
+			  }
+			},
+			"off" : {
+			  "properties" : {
+			    "image" : "xsm_elitesigmamechgun.png:rotation"
+			  }
+			}
+		  }
+        }
+      }
+    }
+  },
+
+  "rotationGroups" : {
+    "guns" : {
+      "angularVelocity" : 10.0
+    }
+  },
+  
+  "particleEmitters" : {
+    "mechActivateParticles" : {
+      "particles" : [ ]
+    },
+    "mechDeactivateParticles" : {
+      "particles" : [ ]
+    },
+    "hoverParticles" : {
+      "emissionRate" : 10.0,
+      "particles" : [
+        {
+          "particle" : "xsm_mechhoverdust",
+		  "offset" : [0, -4.2]
+        },
+        {
+          "particle" : "xsm_mechhoverdust",
+		  "offset" : [0, -4.2]
+        },
+        {
+          "particle" : "xsm_mechhoverdust",
+		  "offset" : [-1.5, -4.2]
+        },
+        {
+          "particle" : "xsm_mechhoverdust",
+		  "offset" : [-1.5, -4.2]
+        },
+        {
+          "particle" : "xsm_mechhoverlight"
+        }
+      ]
+    }
+  }
+}

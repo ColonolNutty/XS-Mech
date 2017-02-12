@@ -1,0 +1,25 @@
+{
+  "frameGrid" : {
+    "size" : [100, 100],
+    "dimensions" : [15, 3],
+
+    "names" : [
+      [ null, "turnOff.1", "turnOff.2", "turnOff.3", "turnOff.4", "turnOff.5", "turnOff.6", "turnOff.7", "turnOff.8" ],
+      [ null ],
+	  [ null ]
+    ]
+  },
+
+  "aliases" : { 
+    "idle" : "turnOff.1",
+    "open" : "turnOff.8",
+    "turnOn.1" : "turnOff.8",
+	"turnOn.2" : "turnOff.7",
+	"turnOn.3" : "turnOff.6",
+	"turnOn.4" : "turnOff.5",
+    "turnOn.5" : "turnOff.4",
+	"turnOn.6" : "turnOff.3",
+	"turnOn.7" : "turnOff.2",
+	"turnOn.8" : "turnOff.1"  
+  }
+}

@@ -1,0 +1,33 @@
+[
+ { 
+  "op" : "add",
+  "path" : "/xsm_beamdamage",
+  "value" : 
+   {"gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.1,
+    "maxMovementPerStep" : 0.4,
+    "groundSlideMovementEnabled" : false,
+    "ignorePlatformCollision" : true,
+    "groundFriction" : 0,
+    "airFriction" : 0.0,
+    "liquidFriction" : 0.0,
+    "speedLimit" : null
+  }
+ },
+  
+ { 
+  "op" : "add", 
+  "path" : "/xsm_heavyprojectile", 
+  "value" : 
+   {"mass" : 1.0,
+    "gravityMultiplier" : 2.6,
+    "bounceFactor" : 0.7,
+    "maxMovementPerStep" : 0.4,
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+    "airFriction" : 1.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0
+  }
+ }
+]

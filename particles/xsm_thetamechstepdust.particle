@@ -1,0 +1,18 @@
+{
+  "kind" : "xsm_thetamechstepdust",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/xsm_thetamechstepdust/xsm_thetamechstepdust.animation",
+    "position" : [0, 0],
+    "finalVelocity" : [0, 0],
+    "approach" : [0, 50],
+    "destructionAction" : "shrink",
+    "destructionTime" : 0.85,
+    "fade" : 1,
+    "size" : 1,
+    "layer" : "front",
+    "timeToLive" : 0.45,
+    "variance" : {
+    }
+  }
+}

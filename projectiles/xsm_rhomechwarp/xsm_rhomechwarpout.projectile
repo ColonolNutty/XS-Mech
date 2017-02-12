@@ -1,0 +1,21 @@
+{
+  "projectileName" : "xsm_rhomechwarpout",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_rhomechwarpout.png",
+  "frames" : "xsm_rhomechwarpout.png",
+  "frameNumber" : 12,
+  "animationCycle" : 1.2,
+  "timeToLive" : 1.2,
+  "power" : 0,
+  "speed" : 0,
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/xsm_landingimpact/xsm_landingimpact.config"
+    }
+  ],
+  "damageKind" : "default"
+}

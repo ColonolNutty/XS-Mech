@@ -1,0 +1,13 @@
+[
+  // This file (which should be at /objects/wired/tabularasa/tabularasa.object) 
+  // demonstrates how to add a mod filter button to the Tabula Rasa
+    { "op" : "add", 
+    "path" : "/filterButtons/-", 
+    "value" :
+        {
+      "baseImage" : "/interface/tabularasa/buttongrey_xsm.png",
+      "baseImageChecked" : "/interface/tabularasa/buttongold_xsm.png",
+      "filter" : "xs_m"
+        }
+    }
+]

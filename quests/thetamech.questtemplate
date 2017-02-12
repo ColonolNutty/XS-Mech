@@ -1,0 +1,23 @@
+  {
+  "id" : "thetamech.gearup",
+  "prerequisites" : [ ],
+  "title" : "^orange;Unlock Theta Mech",
+  "text" : "Unlocking of the Theta Mech.",
+  "completionText" : "Theta Mech has been unlocked.",
+  "speaker" : "player",
+  "moneyRange" : [0, 0],
+  "canBeAbandoned" : true,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+    "gatherRequirements" : {
+      "items" : {
+        "xsm_thetamechcontroller" : {
+          "count" : 1,
+          "consume" : false
+        }
+      }
+    }
+  }
+}

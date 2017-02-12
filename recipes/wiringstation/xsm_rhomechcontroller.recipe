@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "money", "count" : 2100 },
+	{ "item" : "refinedferozium", "count" : 20 },
+	{ "item" : "refinedviolium", "count" : 70 }
+  ],
+  "output" : {
+    "item" : "xsm_rhomechcontroller",
+    "count" : 1
+  },
+  "groups" : [ "craftingwiring", "mechanics", "all", "tools" ]
+}

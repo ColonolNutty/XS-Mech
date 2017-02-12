@@ -1,0 +1,57 @@
+{
+  "frameGrid" : {
+    "size" : [100, 100],
+    "dimensions" : [15, 3],
+
+    "names" : [
+      [ null, "idle", null, "jump.1", "jump.2", "jump.3", "jump.4", "fall.1", "fall.2", "fall.3", "fall.4", "landh.1", "landh.2", "landh.3", "landh.4" ],
+      [ null, "move.1", "move.2", "move.3", "move.4", "move.5", "gunTurnOn.1", "gunTurnOn.2", "gunTurnOn.3", "gunTurnOn.4", "gunTurnOn.5", "gunTurnOn.6"  ],
+	  [ null, "gunFire.1", "gunFire.2", "gunFire.3", "gunFire.4", "gunFire.5", "gunFire.6", "gunFire.7", "gunFire.8" ]
+    ]
+  },
+
+  "aliases" : {
+	"move.6" : "move.5",
+	"move.7" : "move.4",
+	"move.8" : "move.3",
+	"move.9" : "move.2",
+	"move.10" : "move.1",
+	
+	"bmove.1" : "move.1",
+	"bmove.2" : "move.2",
+	"bmove.3" : "move.3",
+	"bmove.4" : "move.4",
+	"bmove.5" : "move.5",
+	"bmove.6" : "move.5",
+	"bmove.7" : "move.4",
+	"bmove.8" : "move.3",
+	"bmove.9" : "move.2",
+	"bmove.10" : "move.1",
+	
+	"land.1" : "landh.3",
+	"land.2" : "landh.4",
+	
+	"gunTurnOff.1" : "gunTurnOn.6",
+	"gunTurnOff.2" : "gunTurnOn.5",
+	"gunTurnOff.3" : "gunTurnOn.4",
+	"gunTurnOff.4" : "gunTurnOn.3",
+	"gunTurnOff.5" : "gunTurnOn.2",
+	"gunTurnOff.6" : "gunTurnOn.1",
+	
+	"gunCool.1" : "gunFire.8",
+	"gunCool.2" : "gunFire.7",
+	"gunCool.3" : "gunFire.6",
+	"gunCool.4" : "gunFire.5",
+	"gunCool.5" : "gunFire.4",
+	"gunCool.6" : "gunFire.3",
+	"gunCool.7" : "gunFire.2",
+	"gunCool.8" : "gunFire.1",
+	
+	"rotation" : "gunTurnOn.6",
+	
+	"hoverF" : "jump.4",
+	"hoverI" : "fall.1",
+	"hoverB" : "fall.2"
+
+  }
+}

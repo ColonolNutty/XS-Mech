@@ -1,0 +1,21 @@
+{
+  "frameGrid" : {
+    "size" : [60, 60],
+    "dimensions" : [11, 2],
+
+    "names" : [
+      [ null, "turnOff.1", "turnOff.2", "turnOff.3", "turnOff.4", "turnOff.5" ],
+      [ null ]
+    ]
+  },
+
+  "aliases" : { 
+    "idle" : "turnOff.1",
+    "open" : "turnOff.5",
+    "turnOn.1" : "turnOff.5",
+	"turnOn.2" : "turnOff.4",
+	"turnOn.3" : "turnOff.3",
+	"turnOn.4" : "turnOff.2",
+	"turnOn.5" : "turnOff.1" 	
+  }
+}

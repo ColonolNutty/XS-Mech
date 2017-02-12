@@ -1,0 +1,34 @@
+{
+  "itemName" : "xsm_elitesigmamechcontroller",
+  "level" : 1,
+  "price" : 10500,
+  "rarity" : "legendary",
+  "shortdescription" : "XS S-07 Elite Sigma Mech",
+  "description" : "Sigma, luxury edition.",
+  "twoHanded" : false,
+  "maxStack" : 1,
+  "itemTags" : ["vehiclecontroller"],
+
+  "animation" : "vehiclecontroller.animation",
+  "scripts" : ["xsm_vehiclecontroller.lua"],
+  "animationScripts" : ["vehiclecursor.lua"],
+  "filled" : true,
+  "category" : "vehicleController",
+  "tooltipKind" : "vehicle",
+  "largeImage" : "xsm_elitesigmathumb.png",
+
+  "respawnTime" : 1.0,
+
+  //=============Item specifc bits.
+  "vehicleType" : "xsm_elitesigmamech",
+  "vehicleBoundingBox" : [-3, -3, 3, 3],
+  "vehicleImage" : "/vehicles/mech/xsm_sigmamech/xsm_elitesigmamechwarp.png:warp.3",
+
+  "animationParts" : {
+    "casing" : "xsm_elitesigmamech.png"
+  },
+
+  "inventoryIcon" : "xsm_elitesigmamech.png:full",
+  "emptyInventoryIcon" : "/items/active/vehiclecontroller/xsm_elitesigmamech.png:empty",
+  "filledInventoryIcon" : "/items/active/vehiclecontroller/xsm_elitesigmamech.png:full"
+}

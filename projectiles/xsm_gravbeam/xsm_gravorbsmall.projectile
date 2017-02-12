@@ -1,0 +1,15 @@
+{
+  "projectileName" : "xsm_gravorbsmall",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_invis.png",
+  "frames" : "xsm_invis.png",
+  "timeToLive" : 0.03,
+  "power" : 0,
+  "speed" : 0.01,
+  "lightColor" : [120, 200, 180],
+  "piercing" : true,
+  "supportsProcessing" : true,
+  "damageKind" : "default"
+}

@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "money", "count" : 1250 },
+	{ "item" : "solariumstar", "count" : 50 },
+	{ "item" : "refinedviolium", "count" : 25 }
+  ],
+  "output" : {
+    "item" : "xsm_elitesigmamechcontroller",
+    "count" : 1
+  },
+  "groups" : [ "craftingwiring", "mechanics", "all", "tools", "mechanics" ]
+}

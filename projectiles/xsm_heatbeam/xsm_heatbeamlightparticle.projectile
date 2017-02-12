@@ -1,0 +1,18 @@
+{
+  "projectileName" : "xsm_heatbeamlightparticle",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_heatbeam.png",
+  "frames" : "xsm_heatbeam.png",
+  "frameNumber" : 1,
+  "timeToLive" : 0.04,
+  "power" : 5,
+  "speed" : 0.01,
+  "piercing" : true,
+  "supportsProcessing" : true,
+  "damageKind" : "default",
+  "pointLight" : false,
+  "lightColor" : [255, 208, 126]
+
+}

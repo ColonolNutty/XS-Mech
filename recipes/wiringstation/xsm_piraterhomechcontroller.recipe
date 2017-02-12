@@ -1,0 +1,13 @@
+{
+  "input" : [
+    { "item" : "money", "count" : 2600 },
+    { "item" : "solariumstar", "count" : 30 },
+	{ "item" : "durasteelbar", "count" : 70 },
+	{ "item" : "refinedferozium", "count" : 15 }
+  ],
+  "output" : {
+    "item" : "xsm_piraterhomechcontroller",
+    "count" : 1
+  },
+  "groups" : [ "craftingwiring", "mechanics", "all", "tools" ]
+}

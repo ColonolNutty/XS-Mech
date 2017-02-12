@@ -1,0 +1,39 @@
+{
+  "frameGrid" : {
+    "size" : [100, 100],
+    "dimensions" : [15, 3],
+
+    "names" : [
+      [ null, "idle", null, "jump.1", "jump.2", "jump.3", "jump.4", "fall.1", "fall.2", "fall.3", "fall.4", "landh.1", "landh.2", "landh.3", "landh.4" ],
+      [ null, "move.1", "move.2", "move.3", "move.4", "move.5" ],
+	  [ null, "rotation", "gunIdle", "gunFire" ]
+    ]
+  },
+
+  "aliases" : {
+	"move.6" : "move.5",
+	"move.7" : "move.4",
+	"move.8" : "move.3",
+	"move.9" : "move.2",
+	"move.10" : "move.1",
+	
+	"bmove.1" : "move.1",
+	"bmove.2" : "move.2",
+	"bmove.3" : "move.3",
+	"bmove.4" : "move.4",
+	"bmove.5" : "move.5",
+	"bmove.6" : "move.5",
+	"bmove.7" : "move.4",
+	"bmove.8" : "move.3",
+	"bmove.9" : "move.2",
+	"bmove.10" : "move.1",
+	
+	"land.1" : "landh.3",
+	"land.2" : "landh.4",
+	
+	"hoverF" : "jump.4",
+	"hoverI" : "fall.1",
+	"hoverB" : "fall.2"
+
+  }
+}

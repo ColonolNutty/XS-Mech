@@ -1,0 +1,22 @@
+{
+  "kind" : "xsm_rhodashflame",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/xsm_purpleflame/xsm_purpleflame.animation",
+    "position" : [0, 0],
+	"initialVelocity" : [-40, -5.0],
+    "finalVelocity" : [-30, -5.0],
+    "approach" : [0, 50],
+    "destructionAction" : "shrink",
+    "destructionTime" : 0.15,
+    "fade" : 1,
+    "size" : 1,
+	"light" : [218, 2, 172],
+    "layer" : "back",
+    "timeToLive" : 0.15,
+    "variance" : {
+      "initialVelocity" : [10, 6],
+	  "size" : 0.75
+    }
+  }
+}

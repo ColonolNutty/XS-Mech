@@ -1,0 +1,2465 @@
+{
+  "sounds" : {
+    "mechStartupSound" : ["/sfx/xsm_NoSound.wav"],
+	"mechShutdownSound" : ["/sfx/tech/mech_powerdown.wav"],
+	"jumpSound" : ["/sfx/tech/mech_jump3.wav"],
+	"dashSound" : ["/sfx/gun/grenadeblast2.wav"],
+	"backHopSound" : ["/sfx/tech/mech_jump3.wav"],
+	"boostInitiateSound" : ["/sfx/gun/fireblast.wav"],
+	"mechFireSound" : ["/sfx/gun/sniper3.wav"], //, "/sfx/gun/uzi3.wav", "/sfx/gun/ar5.wav"
+	"mechEndFireSound" : ["/sfx/gun/reload/sniper_reload_clip2.wav"],
+	"mechGunChargeUpSound" : ["/sfx/xsm_MechGunCharge.wav"],
+	"mechGunCooldownSound" : ["/sfx/tech/mech_powerdown2.wav"],
+	"mechWeapon1SwingSound" : ["/sfx/projectiles/fireball_spit.wav"], 
+	"mechWeapon1SwingSound2" : ["/sfx/projectiles/fireball_poof.wav"],
+	"mechWeapon1IgniteSound" : ["/sfx/gun/plasma_shotgun1.wav"],
+	"mechWeapon1TurnOffSound" : ["/sfx/tech/mech_powerdown2.wav"],
+	"mechWeapon2WarmupSound" : ["/sfx/gun/reload/grenade_reload_clip2.wav"],
+	"mechWeapon2FireSound" : ["/sfx/gun/impact_plasma.wav"],
+	"mechWeapon2LockedSound" : ["/sfx/gun/plasma_sniper_charge1.wav"],
+	"mechWeapon2EndSound" : ["/sfx/gun/impact_robotic4.wav"]
+    },
+
+  "animatedParts" : {
+    "stateTypes" : {	
+      "movement" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+            "properties" : {
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [0, 0.5], [0, 0.5], [0, 0.375], [0, 0.375] ]
+            }
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, 0.25], [0, 0.25], [0, 0.125], [0, 0] ]
+            }
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end",
+			"properties" : {
+              "immediateSound" : "/sfx/tech/mech_step.wav"
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [0, -0.25], [0, 0] ]
+            }
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+			"properties" : {
+              "immediateSound" : "/sfx/tech/mech_step.wav"
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [0, -1.0], [0, -0.75], [0, -0.5], [0, -0.25] ]
+            }
+          },		
+		  
+		  "stand" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, -1.0], [0, -0.75], [0, -0.5], [0, -0.25] ]
+            }
+          },
+
+		  "sit" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end",
+            "frameProperties" : {
+              "stateNudge" : [ [0, -0.25], [0, -0.50], [0, -0.75], [0, -1.00] ]
+            }
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.wav", "", "", "", "", "/sfx/xsm_MechStepLight2.wav", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          },
+		  
+		  "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.wav", "", "", "", "", "/sfx/xsm_MechStepLight2.wav", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.wav", "", "", "", "", "/sfx/xsm_MechStepLight2.wav", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.wav", "", "", "", "", "/sfx/xsm_MechStepLight2.wav", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          },
+		  
+		"backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "/sfx/xsm_MechStepLight.wav", "", "", "", "", "/sfx/xsm_MechStepLight2.wav", "", "", "", "" ],
+              "stateNudge" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+            }
+          }
+        }
+      },
+	  
+      "frontArmPauldronMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+          "idle" : { },
+		  "idleMelee1" : { },
+		  "idleMelee2" : { },
+		  "windupMelee1" : { },
+		  "windupMelee2" : { },
+		  "winddownMelee" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end"
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+		  "slashUp" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end"
+          },
+		  
+		  "slashDown" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end"
+          },
+		  
+		  "resetSlash" : {
+            "frames" : 3,
+            "cycle" : 0.18,
+            "mode" : "end"
+          },
+		  
+		  "resetSlashDown" : {
+            "frames" : 3,
+            "cycle" : 0.18,
+            "mode" : "end"
+          },
+		  
+		  "slashIdleDown" : { },
+		  "slashIdleUp" : { },
+		  
+		  "gravOn" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+		  
+		  "gravFire" : {
+            "frames" : 4,
+            "cycle" : 0.4,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/objects/teslaspike.wav"
+            }
+          },
+		  
+		  "gravLock" : {
+            "frames" : 4,
+            "cycle" : 0.1,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ZappoBeam.wav"
+            }
+          },
+		  
+		  "gravOff" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+          "gun-60Idle" : { },
+		  "gun-30Idle" : { },
+		  "gun+30Idle" : { },
+		  "gun+60Idle" : { },
+		  "gun+90Idle" : { }
+        }
+      },
+	  
+      "frontArmMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+          "idle" : { },
+		  "idleMelee1" : { },
+		  "idleMelee2" : { },
+		  "windupMelee1" : { },
+		  "windupMelee2" : { },
+		  "winddownMelee" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end"
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+		  "gravOn" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+		  
+		  "gravFire" : {
+            "frames" : 4,
+            "cycle" : 0.4,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/objects/teslaspike.wav"
+            }
+          },
+		  
+		  "gravLock" : {
+            "frames" : 4,
+            "cycle" : 0.1,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ZappoBeam.wav"
+            }
+          },
+		  
+		  "gravOff" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "end"
+          }
+        }
+      },
+	  
+      "frontArmSwordMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+          "idle" : { },
+		  "idleMelee1" : { },
+		  "idleMelee2" : { },
+		  "windupMelee1" : { },
+		  "windupMelee2" : { },
+		  "winddownMelee" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end"
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+		  "slashUp" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end"
+          },
+		  
+		  "slashDown" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end"
+          },
+		  
+		  "resetSlash" : {
+            "frames" : 3,
+            "cycle" : 0.18,
+            "mode" : "end"
+          },
+		  
+		  "resetSlashDown" : {
+            "frames" : 3,
+            "cycle" : 0.18,
+            "mode" : "end"
+          },
+		  
+		  "slashIdleDown" : { },
+		  "slashIdleUp" : { }
+        }
+      },	  
+	  
+      "frontArmGunMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+		  "idle" : { },
+		  
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.09,
+            "mode" : "end"
+          }
+        }
+      },
+	  
+      "backArmMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+          "idle" : { },
+		  "idleMelee1" : { },
+		  "idleMelee2" : { },
+		  "windupMelee1" : { },
+		  "windupMelee2" : { },
+		  "winddownMelee" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end"
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+		  "gravOn" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+		  
+		  "gravFire" : {
+            "frames" : 4,
+            "cycle" : 0.4,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/objects/teslaspike.wav"
+            }
+          },
+		  
+		  "gravLock" : {
+            "frames" : 4,
+            "cycle" : 0.1,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ZappoBeam.wav"
+            }
+          },
+		  
+		  "gravOff" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "end"
+          }
+        }
+      },
+	  
+      "backArmSwordMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+          "idle" : { },
+		  "idleMelee1" : { },
+		  "idleMelee2" : { },
+		  "windupMelee1" : { },
+		  "windupMelee2" : { },
+		  "winddownMelee" : { },
+
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+          "fall" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },
+
+		  "land" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "end"
+          },
+		  
+		  "landHard" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "end"
+          },		  
+		  
+          "walk" : {
+            "frames" : 10,
+            "cycle" : 0.55,
+            "mode" : "loop"
+          },
+		  
+          "walkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+          "run" : {
+            "frames" : 10,
+            "cycle" : 0.435,
+            "mode" : "loop"
+          },
+
+          "backWalk" : {
+            "frames" : 10,
+            "cycle" : 0.84,
+            "mode" : "loop"
+          },
+		  
+          "backWalkSlow" : {
+            "frames" : 10,
+            "cycle" : 1.26,
+            "mode" : "loop"
+          },
+		  
+		  "slashUp" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end"
+          },
+		  
+		  "slashDown" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end"
+          },
+		  
+		  "resetSlash" : {
+            "frames" : 3,
+            "cycle" : 0.18,
+            "mode" : "end"
+          },
+		  
+		  "resetSlashDown" : {
+            "frames" : 3,
+            "cycle" : 0.18,
+            "mode" : "end"
+          },
+		  
+		  "slashIdleDown" : { },
+		  "slashIdleUp" : { }		  
+        }
+      },
+	  
+      "backArmGunMovement" : {
+        "default" : "off",
+        "states" : {
+		  "off" : { },
+		  "idle" : { },
+		  
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.09,
+            "mode" : "end"
+          }
+        }
+      },
+	  
+      "backWeapon1" : {
+        "default" : "off",
+        "states" : {
+		  "slashUp" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end",
+		    "properties" : {
+              "persistentSound" : "/sfx/melee/swing_teslaspear.wav" //"/sfx/objects/teslaspike.wav"
+            }
+          },
+		  
+		  "slashDown" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end",
+		    "properties" : {
+              "persistentSound" : "/sfx/gun/shockblast.wav" //"/sfx/objects/teslaspike.wav"
+            }
+          },
+		  
+		  "resetSlash" : {
+            "frames" : 3,
+            "cycle" : 0.18,
+            "mode" : "end"
+          },
+		  
+		  "resetSlashDown" : {
+            "frames" : 3,
+            "cycle" : 0.18,
+            "mode" : "end"
+          },
+		  "off" : { }
+        }
+      },
+	  
+      "backWeapon2" : {
+        "default" : "off",
+        "states" : {		  
+		  "gravFire" : {
+            "frames" : 4,
+            "cycle" : 0.4,
+            "mode" : "loop"
+          },
+		  
+		  "gravLock" : {
+            "frames" : 4,
+            "cycle" : 0.4,
+            "mode" : "loop"
+          },
+
+		  "off" : { }
+        }
+      },
+
+      "frontWeapon1" : {
+        "default" : "off",
+        "states" : {
+		  "slashUp" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end",
+		    "properties" : {
+              "persistentSound" : "/sfx/melee/swing_teslaspear.wav" 
+            }
+          },
+		  
+		  "slashDown" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end",
+		    "properties" : {
+              "persistentSound" : "/sfx/gun/shockblast.wav" 
+            }
+          },
+		  
+		  "resetSlash" : {
+            "frames" : 3,
+            "cycle" : 0.18,
+            "mode" : "end"
+          },
+		  
+		  "resetSlashDown" : {
+            "frames" : 3,
+            "cycle" : 0.18,
+            "mode" : "end"
+          },
+		  "off" : { }
+        }
+      },	
+
+      "frontWeapon2" : {
+        "default" : "off",
+        "states" : {		  
+		  "gravFire" : {
+            "frames" : 4,
+            "cycle" : 0.4,
+            "mode" : "loop"
+          },
+		  
+		  "gravLock" : {
+            "frames" : 4,
+            "cycle" : 0.4,
+            "mode" : "loop"
+          },
+
+		  "off" : { }
+        }
+      },	
+
+      "frontFiring" : {
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+
+          "off" : { }
+        }
+      },
+
+      "backFiring" : {
+        "states" : {
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.15,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+
+          "off" : { }
+        }
+      },	  
+	  
+	  "jetFlame" : {
+	    "default" : "off",
+		"states" : {
+		  "dash" : {
+            "frames" : 3,
+            "cycle" : 0.3,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ThetaJetpack.wav"
+            }		  
+		  },
+		  "boost" : {
+            "frames" : 3,
+            "cycle" : 0.3,
+            "mode" : "loop",
+		    "properties" : {
+              "persistentSound" : "/sfx/xsm_ThetaJetpack.wav"
+            }		  
+		  },
+		  "off" : {  }
+		}
+	  },
+  
+      "jetPack" : {
+	    "default" : "off",
+        "states" : {
+          "boost0" : {  },
+          "boost1" : {  },
+          "boost2" : {  },
+          "boost3" : {  },
+          "turnoff3" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "transition",
+			"transition" : "off",
+			"properties" : {
+              "immediateSound" : "/sfx/objects/bunkerslidingdoor_close.wav"
+            }
+          },
+          "turnoff2" : {
+            "frames" : 3,
+            "cycle" : 0.375,
+            "mode" : "transition",
+			"transition" : "off",
+			"properties" : {
+              "immediateSound" : "/sfx/objects/bunkerslidingdoor_close.wav"
+            }
+          },
+          "turnoff1" : {
+            "frames" : 2,
+            "cycle" : 0.25,
+            "mode" : "transition",
+			"transition" : "off",
+			"properties" : {
+              "immediateSound" : "/sfx/objects/bunkerslidingdoor_close.wav"
+            }
+          },
+          "off" : { }
+        }
+      },
+	  
+	  "torso" : {
+	    "default" : "idle",
+		"states" : {
+		  "turnOff" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end",
+			"frameProperties" : {
+              "immediateSound" : [ "/sfx/objects/apexcooldoor_open.wav", "", "", "", "", "/sfx/objects/apexstatue3_switchon.wav", "", "" ]
+            }			
+		  },
+		  "turnOn" : {
+            "frames" : 8,
+            "cycle" : 0.3,
+            "mode" : "end",
+			"frameProperties" : {
+              "immediateSound" : [ "/sfx/objects/apexcooldoor_close.wav", "", "", "", "", "/sfx/objects/apexstatue3_switchon.wav", "", "/sfx/objects/camera_alert_off.wav" ]
+            }
+		  },
+		  "idle" : {  }
+		}
+	  }
+    },
+	
+	
+	
+    "parts" : {
+	
+	  "backWeapon1" : {
+	    "properties" : {
+		  "centered" : true,
+		  "zLevel" : 0.5,
+		  "back" : true,
+          "offset" : [3.5, 0],
+          "relativeAnchors" : {
+            "backWeaponFirePoint" : [0,0]
+          }
+		},
+		
+		"partStates" : {
+		  "backWeapon1" : {
+		    "slashUp" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechpyrocutlass.png:slashUp.<frame>"
+			  }
+			},
+			"slashDown" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechpyrocutlass.png:slashDown.<frame>"
+			  }
+			},
+			"resetSlash" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechpyrocutlass.png:resetSlash.<frame>"
+			  }
+			},	
+			"resetSlashDown" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechpyrocutlass.png:resetSlashDown.<frame>"
+			  }
+			},			
+			"off" : {
+			}
+		  }
+		}
+	  },
+	  
+	  "backWeapon2" : {
+	    "properties" : {
+		  "centered" : true,
+		  "zLevel" : 0.5,
+		  "back" : true,
+          "offset" : [5.5, -2.75]
+		},
+		
+		"partStates" : {
+		  "backWeapon2" : {
+		    "gravFire" : {
+			  "properties" : {
+			    "image" : "xsm_hookorbsmall.png:<frameIndex>"
+			  }
+			},
+			"gravLock" : {
+			  "properties" : {
+			    "image" : "xsm_hookorb.png:<frameIndex>"
+			  }
+			},			
+			"off" : {
+			}
+		  }
+		}
+	  },
+	  
+	  "backGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 0.5,
+		  "back" : true,
+          "offset" : [8.125, -1.5],
+          "rotationGroup" : "guns",
+          "rotationCenter" : [0.875, 0.75]
+        },
+
+        "partStates" : {
+          "backFiring" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_bulletmuzzle2.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+
+      "backArm" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+          "back" : true,
+          "relativeAnchors" : {
+            "backGravFirePoint" : [5.5, -2.75]
+          }
+        },
+
+        "partStates" : {
+          "backArmMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:idle"
+              }
+            },
+            "idleMelee1" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:idleMelee1"
+              }
+            },
+            "idleMelee2" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:idleMelee2"
+              }
+            },
+            "windupMelee1" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:windupMelee1"
+              }
+            },
+            "windupMelee2" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:windupMelee2"
+              }
+            },
+            "winddownMelee" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:winddownMelee"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.375], [0, -0.125], [0, -0.125] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.2], [0, -0.1] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.4], [0, -0.3], [0, -0.2], [0, -0.1] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "gravOn" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:gravOn.<frame>"
+              }
+            },			
+            "gravFire" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:gravFire.<frame>"
+              }
+            },	
+            "gravLock" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:gravFire.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.05], [0.05, 0], [0, -0.05], [0, 0] ]
+              }
+            },				
+            "gravOff" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarm.png:gravOff.<frame>"
+              }
+            }
+          }	    
+        }
+      },
+
+      "backArmSword" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+          "back" : true
+        },
+
+        "partStates" : {
+          "backArmSwordMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:idle"
+              }
+            },
+            "idleMelee1" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:idleMelee1"
+              }
+            },
+            "idleMelee2" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:idleMelee2"
+              }
+            },
+            "windupMelee1" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:windupMelee1"
+              }
+            },
+            "windupMelee2" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:windupMelee2"
+              }
+            },
+            "winddownMelee" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:winddownMelee"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.375], [0, -0.125], [0, -0.125] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.2], [0, -0.1] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.4], [0, -0.3], [0, -0.2], [0, -0.1] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "slashUp" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:slashUp.<frame>"
+              }
+            },			
+            "slashDown" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:slashDown.<frame>"
+              }
+            },			
+            "resetSlash" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:resetSlash.<frame>"
+              }
+            },			
+            "resetSlashDown" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:slashUp.1"
+              }
+            },
+            "slashIdleUp" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:slashUp.5"
+              }
+            },
+            "slashIdleDown" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmsword.png:slashUp.1"
+              }
+            }			
+          }	
+		}
+      },	  
+	
+      "backArmGun" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+          "back" : true,
+          "rotationGroup" : "guns",
+          "offset" : [0.875, 0.75],
+          "rotationCenter" : [0.875, 0.75],
+          "relativeAnchors" : {
+		    "backGunRotationPoint" : [0, 0],
+			"backGunCasingPoint" : [2, -2],
+            "backGunFirePoint" : [6.0, -2.25]
+          }
+        },
+
+        "partStates" : {
+          "backArmGunMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmgun.png:idle"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbarmgun.png:fire.<frame>"
+              }
+            }
+		  }
+		}
+      },	
+	
+      "backLeg" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2,
+          "back" : true
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:idle"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.5], [0, -0.5], [0, -0.375], [0, -0.375] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.0], [0, 0.75], [0, 0.5], [0, 0.25] ]
+              }
+            },
+			"stand" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.0], [0, 0.75], [0, 0.5], [0, 0.25] ]
+              }
+            },
+			"sit" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:sit.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0.5], [0, 0.75], [0, 1.0] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            }
+          }
+        }
+      },
+
+      "jetFlame" : {	  
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 2.5,
+          "back" : true
+        },
+
+        "partStates" : {		
+		  "jetFlame" : {
+			"dash" : {
+			  "properties" : {
+				"image" : "xsm_rhomechjetflame.png:dash.<frameIndex>"
+			  }
+			},
+			"boost" : {
+			  "properties" : {
+				"image" : "xsm_rhomechjetflame.png:boost.<frameIndex>"
+			  }
+			},			
+			"off" : {  }
+		  }
+		}
+      },	  
+	  
+      "jetPack" : {	  
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3,
+          "back" : true
+        },
+
+        "partStates" : {		
+		  "jetPack" : {
+			"boost0" : {
+			  "properties" : {
+				"image" : "xsm_rhomechjetpack.png:boost.0"
+			  }
+			},
+			"boost1" : {
+			  "properties" : {
+				"image" : "xsm_rhomechjetpack.png:boost.1"
+			  }
+			},			
+			"boost2" : {
+			  "properties" : {
+				"image" : "xsm_rhomechjetpack.png:boost.2"
+			  }
+			},			
+			"boost3" : {
+			  "properties" : {
+				"image" : "xsm_rhomechjetpack.png:boost.3"
+			  }
+			},			
+			"turnoff3" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechjetpack.png:turnoff3.<frameIndex>"
+			  }
+			},
+			"turnoff2" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechjetpack.png:turnoff2.<frameIndex>"
+			  }
+			},
+			"turnoff1" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechjetpack.png:turnoff1.<frameIndex>"
+			  }
+			},			
+			"off" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechjetpack.png:off"
+			  }
+			}
+		  }
+        }
+      },
+	  
+      "background" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 3.5,
+          "back" : true
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            },
+			"stand" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            },
+			"sit" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbackground.png:idle"
+              }
+            }
+          }
+        }
+      },
+
+      "body" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 4
+        },
+
+        "partStates" : {
+          "torso" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbody.png:idle"
+              }
+            },
+			"turnOff" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbody.png:turnOff.<frame>"
+              }
+            },
+			"turnOn" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechbody.png:turnOn.<frame>"
+              }
+            }
+          }
+        }
+      },
+
+      "frontLeg" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 5
+        },
+
+        "partStates" : {
+          "movement" : {
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:idle"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.5], [0, -0.5], [0, -0.375], [0, -0.375] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.0], [0, 0.75], [0, 0.5], [0, 0.25] ]
+              }
+            },
+			"stand" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 1.0], [0, 0.75], [0, 0.5], [0, 0.25] ]
+              }
+            },
+			"sit" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:sit.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.25], [0, 0.5], [0, 0.75], [0, 1.0] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfleg.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25], [0, -0.375], [0, -0.125], [0, 0], [0, -0.125], [0, -0.25] ]
+              }
+            }
+          }
+        }
+      },
+	  
+	  "frontWeapon1" : {
+	    "properties" : {
+		  "centered" : true,
+		  "zLevel" : 5.5,
+		  "offset" : [1.0, 0],
+          "relativeAnchors" : {
+            "frontWeaponFirePoint" : [0,0]
+          }
+		},
+		
+		"partStates" : {
+		  "frontWeapon1" : {
+		    "slashUp" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechpyrocutlass.png:slashUp.<frame>"
+			  }
+			},
+			"slashDown" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechpyrocutlass.png:slashDown.<frame>"
+			  }
+			},
+			"resetSlash" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechpyrocutlass.png:resetSlash.<frame>"
+			  }
+			},	
+			"resetSlashDown" : {
+			  "properties" : {
+			    "image" : "xsm_rhomechpyrocutlass.png:resetSlashDown.<frame>"
+			  }
+			},			
+			"off" : {
+			}
+		  }
+		}
+	  },
+	  
+	  "frontWeapon2" : {
+	    "properties" : {
+		  "centered" : true,
+		  "zLevel" : 5.5,
+		  "offset" : [4.5, -2.75]
+		},
+		
+		"partStates" : {
+		  "frontWeapon2" : {
+		    "gravFire" : {
+			  "properties" : {
+			    "image" : "xsm_hookorbsmall.png:<frameIndex>"
+			  }
+			},
+			"gravLock" : {
+			  "properties" : {
+			    "image" : "xsm_hookorb.png:<frameIndex>"
+			  }
+			},			
+			"off" : {
+			}
+		  }
+		}
+	  },
+	  
+	  "frontGunFire" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 5.5,
+          "offset" : [5.625, -1.5],
+          "rotationGroup" : "guns",
+          "rotationCenter" : [-1.625, 0.75]
+        },
+
+        "partStates" : {
+          "frontFiring" : {
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_bulletmuzzle2.png:<frameIndex>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "frontArm" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 6,
+          "relativeAnchors" : {
+            "frontGravFirePoint" : [4.5, -2.75]
+          }
+        },
+
+        "partStates" : {
+          "frontArmMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:idle"
+              }
+            },
+            "idleMelee1" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:idleMelee1"
+              }
+            },
+            "idleMelee2" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:idleMelee2"
+              }
+            },
+            "windupMelee1" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:windupMelee1"
+              }
+            },
+            "windupMelee2" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:windupMelee2"
+              }
+            },
+            "winddownMelee" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:winddownMelee"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.375], [0, -0.125], [0, -0.125] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.2], [0, -0.1] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.4], [0, -0.3], [0, -0.2], [0, -0.1] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "gravOn" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:gravOn.<frame>"
+              }
+            },			
+            "gravFire" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:gravFire.<frame>"
+              }
+            },
+            "gravLock" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:gravFire.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.05], [0.05, 0], [0, -0.05], [0, 0] ]
+              }
+            },				
+            "gravOff" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarm.png:gravOff.<frame>"
+              }
+            }
+          }
+        }
+      },
+	  
+      "frontArmSword" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 6
+        },
+
+        "partStates" : {
+          "frontArmSwordMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:idle"
+              }
+            },
+            "idleMelee1" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:idleMelee1"
+              }
+            },
+            "idleMelee2" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:idleMelee2"
+              }
+            },
+            "windupMelee1" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:windupMelee1"
+              }
+            },
+            "windupMelee2" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:windupMelee2"
+              }
+            },
+            "winddownMelee" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:winddownMelee"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.375], [0, -0.125], [0, -0.125] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.2], [0, -0.1] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.4], [0, -0.3], [0, -0.2], [0, -0.1] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "slashUp" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:slashUp.<frame>"
+              }
+            },			
+            "slashDown" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:slashDown.<frame>"
+              }
+            },			
+            "resetSlash" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:resetSlash.<frame>"
+              }
+            },			
+            "resetSlashDown" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:slashUp.1"
+              }
+            },
+            "slashIdleUp" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:slashUp.5"
+              }
+            },
+            "slashIdleDown" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmsword.png:slashUp.1"
+              }
+            }
+		  }
+        }
+      },
+
+      "frontArmGun" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 6,
+          "rotationGroup" : "guns",
+          "offset" : [-1.625, 0.75],
+          "rotationCenter" : [-1.625, 0.75],
+          "relativeAnchors" : {
+		    "frontGunRotationPoint" : [0, 0],
+			"frontGunCasingPoint" : [2, -2],
+            "frontGunFirePoint" : [6.0, -2.25]
+          }
+        },
+
+        "partStates" : {
+          "frontArmGunMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmgun.png:idle"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmgun.png:fire.<frame>"
+              }
+            }
+		  }
+		}
+      },	  
+	  
+      "frontArmPauldron" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 7
+        },
+
+        "partStates" : {
+          "frontArmPauldronMovement" : {
+		    "off" : { },
+            "idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:idle"
+              }
+            },
+            "idleMelee1" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:idleMelee1"
+              }
+            },
+            "idleMelee2" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:idleMelee2"
+              }
+            },
+            "windupMelee1" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:windupMelee1"
+              }
+            },
+            "windupMelee2" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:windupMelee2"
+              }
+            },
+            "winddownMelee" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:winddownMelee"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:jump.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.375], [0, -0.375], [0, -0.125], [0, -0.125] ]
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:fall.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.25], [0, -0.25], [0, -0.125], [0, 0] ]
+              }
+            },
+			"land" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:land.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.2], [0, -0.1] ]
+              }
+            },
+			"landHard" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:landh.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, -0.4], [0, -0.3], [0, -0.2], [0, -0.1] ]
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "walkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "run" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:move.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalk" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "backWalkSlow" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:bmove.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25], [0, 0.375], [0, 0.125], [0, 0], [0, 0.125], [0, 0.25] ]
+              }
+            },
+            "slashUp" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmswordpauldron.png:slashUp.<frame>"
+              }
+            },			
+            "slashDown" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmswordpauldron.png:slashDown.<frame>"
+              }
+            },			
+            "resetSlash" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmswordpauldron.png:resetSlash.<frame>"
+              }
+            },			
+            "resetSlashDown" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmswordpauldron.png:slashUp.1"
+              }
+            },
+            "slashIdleUp" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmswordpauldron.png:slashUp.5"
+              }
+            },
+            "slashIdleDown" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmswordpauldron.png:slashUp.1"
+              }
+            },
+			"gravOn" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:gravOn.<frame>"
+              }
+            },			
+            "gravFire" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:gravFire.<frame>"
+              }
+            },
+            "gravLock" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:gravFire.<frame>"
+              },
+              "frameProperties" : {
+                "offset" : [ [0, 0.05], [0.05, 0], [0, -0.05], [0, 0] ]
+              }
+            },				
+            "gravOff" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmpauldron.png:gravOff.<frame>"
+              }
+            },
+            "gun-60Idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmswordpauldron.png:slashUp.2"
+              }
+            },
+            "gun-30Idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmswordpauldron.png:slashUp.3"
+              }
+            },
+            "gun+30Idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmswordpauldron.png:slashUp.4"
+              }
+            },
+            "gun+60Idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmswordpauldron.png:slashUp.5"
+              }
+            },
+            "gun+90Idle" : {
+              "properties" : {
+                "image" : "xsm_piraterhomechfarmswordpauldron.png:slashUp.6"
+              }
+            }
+		  }
+        }
+      }	  
+	  
+    }
+  },
+
+  "rotationGroups" : {
+    "guns" : {
+      "angularVelocity" : 7.0
+    }
+  },
+  
+  "particleEmitters" : {
+    "mechActivateParticles" : {
+      "particles" : [ ]
+    },
+    "mechDeactivateParticles" : {
+      "particles" : [ 
+	    {
+	    "particle" : "xsm_rhomechwarpout"
+		}
+	  ]
+    },
+	"mechSteam" : {
+	  "emissionRate" : 10.0,
+	  "particles" : [
+	    {
+		  "particle" : "xsm_mechgravsteam",
+		  "offset" : [-1.0, 1.0]
+		},	
+	    {
+		  "particle" : "xsm_mechgravsteam",
+		  "offset" : [-1.0, -1.0]
+		}
+	  ]
+	},
+	"mechSteam2" : {
+	  "emissionRate" : 5.0,
+	  "particles" : [
+	    {
+		  "particle" : "xsm_mechgravsteam",
+		  "offset" : [-1.0, 1.0]
+		},	
+	    {
+		  "particle" : "xsm_mechgravsteam",
+		  "offset" : [-1.0, -1.0]
+		}
+	  ]
+	},
+	"hardLandingParticles" : {
+      "particles" : [
+        {
+          "particle" : "xsm_thetamechstepdustback",
+          "offset" : [1.0, -5.25]
+        },
+        {
+          "particle" : "xsm_thetamechstepdust",
+          "offset" : [-1.0, -5.25]
+        }	  
+	  ]
+    },
+	"veryHardLandingParticles" : {
+      "particles" : [
+        {
+          "particle" : "xsm_thetamechstepdustback",
+          "offset" : [1.0, -4.5]
+        },
+        {
+          "particle" : "xsm_thetamechstepdust",
+          "offset" : [-1.0, -4.5]
+        },
+        {
+          "particle" : "xsm_mechlandingdust",
+          "offset" : [-1.0, -4.25]
+        },
+        {
+          "particle" : "xsm_mechlandingdust",
+          "offset" : [1.0, -4.25]
+        }		
+	  ]
+    },
+	"skidParticles" : {
+      "emissionRate" : 75.0,
+      "particles" : [
+        {
+          "particle" : "skid1",
+          "offset" : [1.0, -6.25]
+        },
+        {
+          "particle" : "skid1",
+          "offset" : [-1.0, -6.25]
+        },
+        {
+          "particle" : "sparks",
+          "offset" : [-1.0, -6.25]
+        },
+        {
+          "particle" : "sparks",
+          "offset" : [1.0, -6.25]
+        },
+        {
+          "particle" : "sparks",
+          "offset" : [-1.0, -6.25]
+        },
+        {
+          "particle" : "sparks",
+          "offset" : [1.0, -6.25]
+        }			
+	  ]
+    },
+	"dashParticles" : {
+	  "emissionRate" : 100.0,
+      "particles" : [
+        {
+          "particle" : "xsm_rhodashsmoke",
+          "offset" : [-2.0, 2.25]
+        },
+        {
+          "particle" : "xsm_rhodashsmoke",
+          "offset" : [-2.0, 1.0]
+        },
+        {
+          "particle" : "xsm_rhodashflame",
+          "offset" : [-2.0, 3.0]
+        },
+        {
+          "particle" : "xsm_rhodashflame",
+          "offset" : [-2.0, 1.0]
+        },
+        {
+          "particle" : "xsm_rhodashflame",
+          "offset" : [-2.0, 0]
+        },
+        {
+          "particle" : "xsm_rhodashsmallflame",
+          "offset" : [-2.0, 3.0]
+        },
+        {
+          "particle" : "xsm_rhodashsmallflame",
+          "offset" : [-2.0, 1.0]
+        },
+        {
+          "particle" : "xsm_rhodashsmallflame",
+          "offset" : [-2.0, 0]
+        }		
+	  ]
+    },
+	"boostParticles" : {
+	  "emissionRate" : 100.0,
+	  "particles" : [
+        {
+          "particle" : "xsm_rhoboostsmoke",
+          "offset" : [-1.5, 1.0]
+        },
+        {
+          "particle" : "xsm_rhoboostflame",
+          "offset" : [-2.0, 1.5]
+        },
+        {
+          "particle" : "xsm_rhoboostflame",
+          "offset" : [-1.5, 0]
+        },
+        {
+          "particle" : "xsm_rhoboostsmallflame",
+          "offset" : [-2.0, 1.5]
+        },
+        {
+          "particle" : "xsm_rhoboostsmallflame",
+          "offset" : [-1.5, 0]
+        }
+	  ]
+	}
+  }
+}

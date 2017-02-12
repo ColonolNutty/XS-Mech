@@ -1,0 +1,16 @@
+{
+  "projectileName" : "xsm_hookbeam",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_hookbeam.png",
+  "frames" : "xsm_hookbeam.png",
+  "frameNumber" : 3,
+  "animationCycle" : 0.01,
+  "timeToLive" : 0.03,
+  "power" : 0,
+  "speed" : 0.01,
+  "piercing" : true,
+  "supportsProcessing" : true,
+  "damageKind" : "default"
+}

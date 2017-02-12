@@ -1,0 +1,125 @@
+{
+  "name" : "xsm_thetamech",
+  "type" : "head",
+  "scripts" : [
+   "/tech/mech/xsm_mechAPI.lua",
+   "/tech/mech/xsm_thetamech.lua"
+   ],
+  "actions" : [ "mechActivate", "mechDeactivate" ],
+  "animator" : "xsm_thetamech.animation",
+
+  "mechCustomMovementParameters" : {
+    "standingPoly" : [ [-2.5, -5.0], [-2, -8], [2, -8], [2.5, -5.0], [2.5, 4], [2, 5], [-2, 5], [-2.5, 4] ],
+    "crouchingPoly" : [ [-2.5, -5.0], [-2, -8], [2, -8], [2.5, -5.0], [2.5, 4], [2, 5], [-2, 5], [-2.5, 4] ],
+
+    "mass" : 20.0,
+
+    "normalGroundFriction" : 400.0,
+    "ambulatingGroundFriction" : 48.0,
+    "skiddingGroundFriction" : 80.0,
+
+    "groundForce" : 1000.0,
+    "airForce" : 50.0,
+    "liquidForce" : 70.0,
+
+    "walkSpeed" : 9.0,
+    "runSpeed" : 11.0,
+
+    "airJumpProfile" : {
+      "jumpSpeed" : 0.0,
+      "jumpControlForce" : 0.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.15
+    },
+
+    "liquidJumpProfile" : {
+      "jumpSpeed" : 0.0,
+      "jumpControlForce" : 0.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.1
+    }
+  },
+
+  "statusEffects" : [
+    {
+      "kind" : "breathprotection"
+    },
+    {
+      "kind" : "ColdProtection",
+      "amount" : 80
+    },
+    {
+      "kind" : "Protection",
+      "level" : 36,
+      "amount" : 250
+    },
+    {
+      "kind" : "healthincrease",
+      "amount" : 400
+    }
+  ],
+  
+  "energyCostPerSecond" : 30,
+  "energyCostPerBoost" : 15,
+  "energyCostPerPrimaryShot" : 100,
+  "energyCostPerAltShot" : 10,
+  "energyCostPerSecondEmergencyJets" : 30,
+  
+  // Startup/shutdown
+  "mechStartupTime" : 0.75,
+  "mechShutdownTime" : 1.5,
+  
+  "mechBoostPower" : 1800,
+  "mechBoostSpeed" : 40,
+  "mechBoostDuration" : 0.3,
+  "mechBoostChargeInterval" : 0.15,
+  "mechBoostChargeCoefficient" : 0.15,
+  "mechBoostAngle1" : 10,
+  "mechBoostAngle2" : 20,
+  "mechBoostAngle3" : 40,
+  "mechBoostAngle4" : 60,
+  "mechBoostRechargeTime" : 0.9,
+  "mechLandingProjectile" : "xsm_landingimpact",
+  
+  "mechEmergencyBoostSpeed" : 40,
+  "mechEmergencyBoostPower" : 2400,
+  
+  "mechTransformPositionChange" : [0.0, 6],
+  "parentOffset" : [0.2, 0.8],
+
+  "mechCollisionTest" : [-3.5, -2.0, 3.5, 8.5],
+
+  "mechAimLimit" : 35,
+  
+  "mechFireCycle" : 2.0,
+  "mechFireAnimTime" : 0.5,
+  "mechBeamProjectile" : "xsm_thetabeam",
+  "mechBeamLongProjectile" : "xsm_thetabeamlong",
+  "mechBeamProjectileConfig" : {
+    "power" : 9001
+  },
+  "mechBeamEndProjectile" : "xsm_thetabeamend",
+  "mechBeamEndProjectileConfig" : {
+    "power" : 9001
+  },
+  "mechBeamRange" : 100.0,
+  "mechBeamPen" : 10.0,
+  "mechBeamStep" : 0.5,
+  "mechBeamLongStep" : 1.5,
+  "mechBeamWidth" : 5,
+  "mechRecoilSpeed" : 40,
+  "mechRecoilPower" : 9000,
+  
+  "mechGunOffsetFront" : [-3.75, 3],
+  "mechGunOffsetBack" : [2.25, 3],
+
+  "mechAltFireCycle" : 3,
+  "mechAltFireShotInterval" : 0.1,
+  "mechAltProjectile" : "xsm_daisybustergrenadefire",
+  "mechAltProjectileConfig" : {
+    "power" : 700
+  }  
+  
+  
+  
+}

@@ -1,0 +1,11 @@
+{
+  "input" : [
+    { "item" : "money", "count" : 2000 },
+	{ "item" : "durasteelbar", "count" : 50 }
+  ],
+  "output" : {
+    "item" : "xsm_sigmamechcontroller",
+    "count" : 1
+  },
+  "groups" : [ "craftingwiring", "mechanics", "all", "tools" ]
+}

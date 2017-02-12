@@ -1,0 +1,15 @@
+{
+  "frameGrid" : {
+    "size" : [100, 84],
+    "dimensions" : [15, 3],
+
+    "names" : [
+      [ null, "capF", "capB" ],
+      [ null, "rotation", "fire.1", "fire.2", "fire.3" ],
+	  [ null ]
+    ]
+  },
+
+  "aliases" : {
+  }
+}

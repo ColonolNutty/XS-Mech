@@ -1,0 +1,30 @@
+{
+  "projectileName" : "xsm_pyrocutlassswooshdownF",
+  "image" : "xsm_plasmaswordswoosh.png",
+  "frames" : "xsm_plasmaswordswoosh.png",
+  "animationCycle" : 0.15,
+  "timeToLive" : 0.15,
+  "level" : 1,
+  "frameNumber" : 1,
+  "speed" : 0,
+  "orientationLocked" : true,
+  "damagePoly" : [ [-8, 72], [-56, 56], [-80, 40], [-100, 8], [-92, -24], [-72, -40], [-32, -56], [16, -60], [32, -60], [40, -48], [48, -24], [24, -32], [-4, -16], [-16, 16], [0, 24] ],
+  "animationLoops" : false,   
+  
+  "piercing" : true,
+  "flippable" : true,
+  "damageKind" : "2hsword",
+  "power" : 5500,
+  "statusEffects" : [
+    {
+      "effect" : "glow",
+      "amount" : 100.0,
+      "color" : "orange",
+      "duration" : 3.0
+    },
+    { "effect" : "testburning",
+	  "amount" : 111,
+	  "duration" : 3.0
+	}
+  ]
+}

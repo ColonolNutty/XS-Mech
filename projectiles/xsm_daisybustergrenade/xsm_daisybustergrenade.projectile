@@ -1,0 +1,58 @@
+{
+  "projectileName" : "xsm_daisybustergrenade",
+  "physics" : "grenade",
+  "bounces" : -1,
+  "level" : 3,
+  "timeToLive" : 0.7,
+  "image" : "xsm_daisybustergrenade.png",
+  "frames" : "xsm_daisybustergrenade.png",
+  "damageKindImage" : "icon.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 4,
+  "speed" : 45,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion/regularexplosion.config"
+    },
+    {
+      "action" : "projectile",
+      "type" : "xsm_daisybustercluster",
+      "fuzzAngle" : 10,
+      "inheritDamageFactor" : 0.8,
+      "angleAdjust" : 35
+    },
+    {
+      "action" : "projectile",
+      "type" : "xsm_daisybustercluster",
+      "fuzzAngle" : 10,
+      "inheritDamageFactor" : 0.8,
+      "angleAdjust" : -35
+    },
+    {
+      "action" : "projectile",
+      "type" : "xsm_daisybustercluster",
+      "fuzzAngle" : 10,
+      "inheritDamageFactor" : 0.8,
+      "angleAdjust" : 1
+    },
+    {
+      "action" : "projectile",
+      "type" : "xsm_daisybustercluster",
+      "fuzzAngle" : 10,
+      "inheritDamageFactor" : 0.8,
+      "angleAdjust" : -18
+    },
+    {
+      "action" : "projectile",
+      "type" : "xsm_daisybustercluster",
+      "fuzzAngle" : 10,
+      "inheritDamageFactor" : 0.8,
+      "angleAdjust" : 18
+    }
+
+  ],
+  "power" : 10,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

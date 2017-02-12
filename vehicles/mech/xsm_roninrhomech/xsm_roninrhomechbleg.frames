@@ -1,0 +1,23 @@
+{
+  "frameGrid" : {
+    "size" : [100, 84],
+    "dimensions" : [15, 3],
+
+    "names" : [
+      [ null, "idle", null, "jump.1", "jump.2", "jump.3", "jump.4", "fall.1", "fall.2", "fall.3", "fall.4", "landh.1", "landh.2", "landh.3", "landh.4" ],
+      [ null, "bmove.10", "bmove.9", "bmove.8", "bmove.7", "bmove.6", "bmove.5", "bmove.4", "bmove.3", "bmove.2", "bmove.1", null, "hoverF", "hoverI", "hoverB" ],
+	  [ null, "move.1", "move.2", "move.3", "move.4", "move.5", "move.6", "move.7", "move.8", "move.9", "move.10" ]
+    ]
+  },
+
+  "aliases" : {
+	
+	"land.1" : "landh.3",
+	"land.2" : "landh.4",
+	
+	"sit.1" : "landh.4",
+	"sit.2" : "landh.3",
+	"sit.3" : "landh.2",
+	"sit.4" : "landh.1"
+  }
+}

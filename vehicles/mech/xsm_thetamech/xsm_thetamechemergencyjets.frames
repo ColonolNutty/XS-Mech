@@ -1,0 +1,13 @@
+{
+  "frameGrid" : {
+    "size" : [128, 14],
+    "dimensions" : [4, 1],
+
+    "names" : [
+      [ "hover.0", "hover.1", "hover.2", "hover.3" ]
+    ]
+  },
+
+  "aliases" : {
+  }
+}

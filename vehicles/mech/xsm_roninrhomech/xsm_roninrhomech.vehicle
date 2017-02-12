@@ -1,0 +1,179 @@
+{
+  "name" : "xsm_roninrhomech",
+  "boundBox" : [-2.5, -5.25, 2.5, 3.875],
+  "slaveControlTimeout" : 2.0,
+  "slaveControlHeartbeat" : 1.0,
+  "canBeHit" : false,
+
+  "script" : "/vehicles/mech/xsm_roninrhomech.lua",
+  "animation" : "/vehicles/mech/xsm_roninrhomech/xsm_roninrhomech.animation",
+
+  "animationCustom" : {
+    "particleEmitters" : {
+      "smoke1" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [{ "particle" : "burningvehiclesmokefront"}]
+      },
+      
+      "smoke2" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [{ "particle" : "shadowsmoke"},{ "particle" : "burningdustfront"}]
+      },
+      
+      "fire1" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [ { "particle" : "burningdust"},
+                        { "particle" : "campfireflames"},
+                        { "particle" : "fireshard"},
+                        { "particle" : "burningvehiclesmokeback"}]
+
+      },
+
+      "fire2" : {
+        "emissionRate" : 0.0,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [ { "particle" : "burningdust"},
+                        { "particle" : "campfireflames"},
+                        { "particle" : "fireshard"},
+                        { "particle" : "burningvehiclesmokeback"}]
+
+      },
+
+      "damageShards" : {
+        "emissionRate" : 0.0,
+        "burstCount"  : 4,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [{ "particle" : "fireshard"}]
+      },
+
+      "wreckage" : {
+        "active" : false,
+        "emissionRate" : 0.0,
+        "burstCount"  : 8,
+        "offsetRegion" : [-2, -3, 2, 3],
+        "particles" : [
+                       { "particle" : "hoverbikekhakiwreck2"},
+                       { "particle" : "hoverbikewreck3"},
+                       { "particle" : "hoverbikekhakiwreck4"},
+                       { "particle" : "hoverbikewreck5"}]
+      }
+    }
+  },
+  
+  "movementSettings" : {
+    "collisionPoly" : [ [-2.5, -3.25], [-2.0, -5.25], [2.0, -5.25], [2.5, -3.25], [2.5, 3.0], [1.0, 3.875], [-1.0, 3.875], [-2.5, 3.0] ],
+    "mass" : 5,
+    "airFriction" : 0.5,
+    "groundFriction" : 50.0,
+    "ignorePlatformCollision" : false
+  },
+
+  "loungePositions" : {
+    "seat" : {
+      "part" : "body",
+      "partAnchor" : "sitPosition",
+      "orientation" : "sit",
+      "dance" : "flipswitch",
+      "statusEffects" : ["headlamp","nude","invulnerable","xsm_energyuse"]
+    }
+  },
+ 
+  //health and damage
+
+  "maxHealth" : 1000,
+  "protection" : 50,
+  "materialKind" : "robotic",
+  "healthBarYAdjust" : 0,
+
+  // More physics properties
+  "mechWalkSlowSpeed" : 6.0,
+  "mechBackwardSpeed" : 8.0,
+  "mechWalkSpeed" : 12,
+  "mechRunSpeed" : 16,
+  "mechSkiddingFriction" : 8.0,
+  "mechBoostAirForce" : 600,
+  "mechLandingProjectile" : "xsm_landingimpact",
+  "mechLandingLocation" : [0.0, -5.5],
+  
+  // Startup/shutdown
+  "mechStartupTime" : 0.5,
+  "mechShutdownTime" : 1.0,
+  
+  // Jump, Dash, Backhop, Hover, etc. parameters
+  "jumpDuration" : 0.2,
+  "jumpSpeed" : 50,
+  "jumpControlForce" : 5000,
+  "maximumDoubleTapTime" : 0.2,
+  "dashDuration" : 0.3,
+  "dashSpeed" : 50,
+  "dashControlForce" : 8000,
+  "dashAngle" : 10, 
+  "backHopDuration" : 0.10,
+  "backHopSpeed" : 40,
+  "backHopControlForce" : 8000,
+  "backHopAngle" : 10,
+  "backHopCooldown" : 0.75,
+  "hoverSpeed" : 0,
+  "hoverControlForce" : 2000,
+  
+  // Energy parameters
+  "energyCostPerSecond" : 20,
+  "energyCostPerSecondRunning" : 15,
+  "energyCostPerBackHop" : 20,
+  "energyCostPerSecondHover" : 10,//40,
+  "energyCostPerHover" : 10,
+  "energyCostPerBeamFire" : 85,
+  "energyCostPerAltShot" : 20,
+
+  "mechTransformPositionChange" : [0.0, 3.0],
+  "parentOffset" : [0, 2.125],
+
+  "mechCollisionTest" : [-3.0, -1.0, 3.0, 6.25],
+  
+  // Equipment
+  "mechLeftEquip" : "heatBeam",
+  "mechLeftAnimation" : [ "frontArmAltMovement", "backArmAltMovement" ],  // Always front, then back
+  "mechRightEquip" : "none",
+  "mechRightAnimation" : [ "frontArmMovement", "backArmMovement" ],
+  
+  // Mech Weapon 2 (Torso Cannons)
+  "mechCannonAimLimit" : 45,
+  "mechCannonFireCone" : 2,
+  "mechCannonFireCycle" : 0.5,
+  "mechCannonProjectile" : "xsm_roninshell",
+  "mechCannonProjectileConfig" : {
+    "power" : 15
+  },
+  
+  // Mech Weapon 1 (Heat Beam)
+  "mechGunAimLimit" : 80,
+  "mechGunRotationRadius" : 0.25,
+  "mechCasingProjectile" : "xsm_heshellcasing",
+  "mechGunReadyTime" : 0.5,
+  "mechGunHolsterTime" : 0.5,
+  "mechGunIdleTime" : 1.05,
+  "mechGunFireTime" : 2.0,
+  "mechGunCoolingTime" : 0.5,
+  "mechGunSuppAngularVel" : 25, // Max Angular velocity of arm while beam is firing [degrees/sec]
+  "mechGunBeamStep" : 1.1875,
+  "mechGunBeamUpdateTime" : 0.03,
+  "mechGunBeamEndProjectile" : "xsm_heatbeamend",
+  "mechGunBeamHitProjectile" : "xsm_heatbeamhit",
+  "mechGunBeamSmokeProkectile" : "xsm_heatbeamsmoke",
+  "mechGunLightProjectile" : "xsm_heatbeamlightparticle",
+  "mechGunBeamMaxRange" : 50,
+  "mechGunBeamWidth" : 4,
+  "mechGunRecoilSpeed" : 90,
+  "mechGunBeamUpperDamage" : 50,
+  "mechGunBeamLowerDamage" : 40,
+  "mechGunRecoilPower" : 0,
+  "mechGunRecoilKick" : 0,
+
+
+  "mechJumpVelocity" : [10, 30],
+  "offGroundFrames" : 8,
+  "mechLevel" : 6
+}

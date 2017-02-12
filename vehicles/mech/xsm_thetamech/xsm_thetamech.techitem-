@@ -1,0 +1,10 @@
+{
+  "itemName" : "xsm_thetamech",
+  "rarity" : "Legendary",
+  "inventoryIcon" : "/tech/xsm_thetamech.png",
+  "description" : "Press F while on the ground. Warning: highly destructive.",
+  "shortdescription" : "XS T-17 Theta Mech",
+  "inspectionKind" : "tech",
+
+  "techModule" : "xsm_thetamech"
+}

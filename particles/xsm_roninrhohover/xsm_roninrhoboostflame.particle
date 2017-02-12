@@ -1,0 +1,22 @@
+{
+  "kind" : "xsm_roninrhoboostflame",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/xsm_blueflame/xsm_blueflame.animation",
+    "position" : [0, 0],
+	"initialVelocity" : [-5, -35],
+    "finalVelocity" : [-1, -25],
+    "approach" : [0, 50],
+    "destructionAction" : "shrink",
+    "destructionTime" : 0.15,
+    "fade" : 1,
+    "size" : 0.75,
+	"light" : [81, 255, 249],
+    "layer" : "back",
+    "timeToLive" : 0.15,
+    "variance" : {
+      "initialVelocity" : [2, 10],
+	  "size" : 0.75
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "name" : "xsm_roninrhomech",
+  "type" : "head",
+  "scripts" : [
+   "/tech/mech/xsm_mechAPI.lua",
+   "/tech/mech/xsm_roninrhomech.lua" 
+   ],
+  "actions" : [ "mechActivate", "mechDeactivate" ],
+  "animator" : "xsm_roninrhomech.animation",
+
+  "mechCustomMovementParameters" : {
+    "standingPoly" : [ [-2.5, -3.25], [-2.0, -5.25], [2.0, -5.25], [2.5, -3.25], [2.5, 3.0], [1.0, 3.875], [-1.0, 3.875], [-2.5, 3.0] ],
+    "crouchingPoly" : [ [-2.5, -3.25], [-2.0, -5.25], [2.0, -5.25], [2.5, -3.25], [2.5, 2.0], [1.0, 2.875], [-1.0, 2.875], [-2.5, 2.0] ],
+
+    "mass" : 10.0,
+
+    "normalGroundFriction" : 150.0,
+    "ambulatingGroundFriction" : 15.0,
+    "skiddingGroundFriction" : 25.0,
+
+    "groundForce" : 1000.0,
+    "airForce" : 200.0,
+    "liquidForce" : 70.0,
+
+    "walkSpeed" : 16.0,
+    "runSpeed" : 12.0,
+
+    "airJumpProfile" : {
+      "jumpSpeed" : 0.0,
+      "jumpControlForce" : 0.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.15
+    },
+
+    "liquidJumpProfile" : {
+      "jumpSpeed" : 15.0,
+      "jumpControlForce" : 3400.0,
+      "jumpInitialPercentage" : 0.75,
+      "jumpHoldTime" : 0.1
+    }
+  },
+  
+  // More physics properties
+  "mechBackwardSpeed" : 8.0,
+  "mechSkiddingFriction" : 8.0,
+  "mechBoostAirForce" : 600,
+  "mechWalkSlowSpeed" : 6.0,
+  "mechLandingProjectile" : "xsm_landingimpact",
+  "mechLandingLocation" : [0.0, -5.5],
+  
+  // Startup/shutdown
+  "mechStartupTime" : 0.5,
+  "mechShutdownTime" : 1.0,
+  
+  // Jump, Dash, Backhop, Hover, etc. parameters
+  "jumpDuration" : 0.2,
+  "jumpSpeed" : 50,
+  "jumpControlForce" : 5000,
+  "maximumDoubleTapTime" : 0.2,
+  "dashDuration" : 0.3,
+  "dashSpeed" : 50,
+  "dashControlForce" : 3000,
+  "dashAngle" : 10, 
+  "backHopDuration" : 0.10,
+  "backHopSpeed" : 40,
+  "backHopControlForce" : 6000,
+  "backHopAngle" : 5,
+  "backHopCooldown" : 0.75,
+  "hoverSpeed" : 0,
+  "hoverControlForce" : 2000,
+  
+  // Energy parameters
+  "energyCostPerSecond" : 20,
+  "energyCostPerSecondRunning" : 15,
+  "energyCostPerBackHop" : 20,
+  "energyCostPerSecondHover" : 40,
+  "energyCostPerHover" : 10,
+  "energyCostPerBeamFire" : 85,
+  "energyCostPerAltShot" : 20,
+
+  "mechTransformPositionChange" : [0.0, 3.0],
+  "parentOffset" : [0, 2.125],
+
+  "mechCollisionTest" : [-3.0, -1.0, 3.0, 6.25],
+  
+  // Equipment
+  "mechLeftEquip" : "heatBeam",
+  "mechLeftAnimation" : [ "frontArmAltMovement", "backArmAltMovement" ],  // Always front, then back
+  "mechRightEquip" : "none",
+  "mechRightAnimation" : [ "frontArmMovement", "backArmMovement" ],
+  
+  // Mech Weapon 2 (Torso Cannons)
+  "mechCannonAimLimit" : 45,
+  "mechCannonFireCone" : 2,
+  "mechCannonFireCycle" : 0.5,
+  "mechCannonProjectile" : "xsm_roninshell",
+  "mechCannonProjectileConfig" : {
+    "power" : 700
+  },
+  
+  // Mech Weapon 1 (Heat Beam)
+  "mechGunAimLimit" : 80,
+  "mechGunRotationRadius" : 0.25,
+  "mechCasingProjectile" : "xsm_heshellcasing",
+  "mechGunReadyTime" : 0.5,
+  "mechGunHolsterTime" : 0.5,
+  "mechGunIdleTime" : 1.05,
+  "mechGunFireTime" : 1.0,
+  "mechGunCoolingTime" : 0.5,
+  "mechGunSuppAngularVel" : 25, // Max Angular velocity of arm while beam is firing [degrees/sec]
+  "mechGunBeamStep" : 1.1875,
+  "mechGunBeamUpdateTime" : 0.03,
+  "mechGunBeamEndProjectile" : "xsm_heatbeamend",
+  "mechGunBeamHitProjectile" : "xsm_heatbeamhit",
+  "mechGunBeamSmokeProkectile" : "xsm_heatbeamsmoke",
+  "mechGunLightProjectile" : "xsm_heatbeamlightparticle",
+  "mechGunBeamMaxRange" : 50,
+  "mechGunBeamWidth" : 4,
+  "mechGunRecoilSpeed" : 90,
+  "mechGunBeamUpperDamage" : 4100,
+  "mechGunBeamLowerDamage" : 4000,
+  "mechGunRecoilPower" : 0,
+  "mechGunRecoilKick" : 0
+  
+  
+  
+}

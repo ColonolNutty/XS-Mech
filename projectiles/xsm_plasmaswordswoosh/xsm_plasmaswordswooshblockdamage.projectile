@@ -1,0 +1,21 @@
+{
+  "projectileName" : "xsm_plasmaswordswooshblockdamage",
+  "image" : "xsm_plasmaswordswoosh.png",
+  "frames" : "xsm_plasmaswordswoosh.png",
+  "animationCycle" : 1.0,
+  "level" : 1,
+  "timeToLive" : 0,
+  "frameNumber" : 1,
+  "speed" : 0,
+  "orientationLocked" : true,
+  "animationLoops" : false,
+
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/xsm_plasmaswordswoosh/xsm_plasmaswordswoosh.config"
+    }
+  ],  
+  "damageKind" : "default",
+  "power" : 0
+}

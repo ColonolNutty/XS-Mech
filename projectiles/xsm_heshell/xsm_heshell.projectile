@@ -1,0 +1,20 @@
+{
+  "projectileName" : "xsm_heshell",
+  "image" : "xsm_heshell.png",
+  "frames" : "xsm_heshell.png",
+  "animationCycle" : 0.25,
+  "level" : 3,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "speed" : 180,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/xsm_bulletexplosion.config"
+    }
+  ],
+  "lightColor" : [240, 219, 160],
+  "power" : 5.0,
+  "damageKind" : "default"
+}

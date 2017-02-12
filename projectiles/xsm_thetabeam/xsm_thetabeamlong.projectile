@@ -1,0 +1,17 @@
+{
+  "projectileName" : "xsm_thetabeamlong",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_thetabeamlong.png",
+  "frames" : "xsm_thetabeamlong.png",
+  "frameNumber" : 6,
+  "animationCycle" : 0.2,
+  "timeToLive" : 0.1,
+  "power" : 0,
+  "speed" : 0.01,
+  "piercing" : true,
+  "supportsProcessing" : true,
+  "lightColor" : [205, 163, 96],
+  "damageKind" : "default"
+}

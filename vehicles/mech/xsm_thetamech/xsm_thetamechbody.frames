@@ -1,0 +1,39 @@
+{
+  "frameGrid" : {
+    "size" : [128, 128],
+    "dimensions" : [15, 2],
+
+    "names" : [
+      [ null, "idle", null, "turnOff.1", "turnOff.2", "turnOff.3", "turnOff.4", "turnOff.5", "turnOff.6", "turnOff.7", "turnOff.8", "landh.1", "landh.2", "landh.3", "landh.4" ],
+      [ null, "move.1", "move.2", "move.3", "move.4", "move.5", "move.6", "move.7", "move.8", "move.9", "move.10", "move.11", "move.12" ]
+    ]
+  },
+
+  "aliases" : {
+    "bmove.12" : "move.1",
+    "bmove.11" : "move.2",
+    "bmove.10" : "move.3",
+    "bmove.9" : "move.4",
+    "bmove.8" : "move.5",
+    "bmove.7" : "move.6",
+    "bmove.6" : "move.7",
+    "bmove.5" : "move.8",
+    "bmove.4" : "move.9",
+    "bmove.3" : "move.10",
+    "bmove.2" : "move.11",
+    "bmove.1" : "move.12",
+	
+	"land.1" : "landh.3",
+	"land.2" : "landh.4",
+	
+    "open" : "turnOff.8",
+    "turnOn.1" : "turnOff.8",
+	"turnOn.2" : "turnOff.7",
+	"turnOn.3" : "turnOff.6",
+	"turnOn.4" : "turnOff.5",
+    "turnOn.5" : "turnOff.4",
+	"turnOn.6" : "turnOff.3",
+	"turnOn.7" : "turnOff.2",
+	"turnOn.8" : "turnOff.1"  
+  }
+}

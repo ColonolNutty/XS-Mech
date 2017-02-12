@@ -1,0 +1,18 @@
+{
+  "frameGrid" : {
+    "size" : [60, 60],
+    "dimensions" : [11, 2],
+
+    "names" : [
+      [ null, "rotation", null, "fire.0", "fire.1", "fire.2", "fire.3" ],
+      [ null ]
+    ]
+  },
+
+  "aliases" : {
+    "bfire.3" : "fire.3",
+    "bfire.2" : "fire.0",
+    "bfire.1" : "fire.1",
+    "bfire.0" : "fire.2"
+  }
+}

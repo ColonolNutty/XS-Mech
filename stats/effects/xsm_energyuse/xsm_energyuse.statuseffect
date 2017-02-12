@@ -1,0 +1,18 @@
+{
+  "effectConfig" : {
+    "minEnergy" : 100,
+    "planetLevelBonus" : 20,
+    "regenRateMultiplier" : 5,
+    "regenLockMultiplier" : 2
+  },
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "energyuse.lua"
+  ],
+  "scriptDelta" : 1,
+  "name" : "xsm_energyuse",
+  "label" : "XS-Link",
+  "icon" : "energyuse.png"
+
+}

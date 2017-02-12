@@ -1,0 +1,17 @@
+{
+  "projectileName" : "xsm_hookbeamend",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_hookbeamend.png",
+  "frames" : "xsm_hookbeamend.png",
+  "frameNumber" : 5,
+  "animationCycle" : 0.01,
+  "timeToLive" : 0.03,
+  "power" : 0,
+  "speed" : 0.01,
+  "lightColor" : [232, 163, 116],
+  "piercing" : true,
+  "supportsProcessing" : true,
+  "damageKind" : "default"
+}

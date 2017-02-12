@@ -1,0 +1,16 @@
+{
+  "projectileName" : "xsm_gravbeam",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_gravbeam.png",
+  "frames" : "xsm_gravbeam.png",
+  "frameNumber" : 3,
+  "animationCycle" : 0.01,
+  "timeToLive" : 0.03,
+  "power" : 0,
+  "speed" : 0.01,
+  "piercing" : true,
+  "supportsProcessing" : true,
+  "damageKind" : "default"
+}

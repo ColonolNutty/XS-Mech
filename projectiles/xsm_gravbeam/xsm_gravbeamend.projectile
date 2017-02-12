@@ -1,0 +1,17 @@
+{
+  "projectileName" : "xsm_gravbeamend",
+  "physics" : "xsm_beamdamage",
+  "bounces" : 0,
+  "level" : 3,
+  "image" : "xsm_gravbeamend.png",
+  "frames" : "xsm_gravbeamend.png",
+  "frameNumber" : 5,
+  "animationCycle" : 0.01,
+  "timeToLive" : 0.03,
+  "power" : 0,
+  "speed" : 0.01,
+  "lightColor" : [145, 230, 227],
+  "piercing" : true,
+  "supportsProcessing" : true,
+  "damageKind" : "default"
+}
